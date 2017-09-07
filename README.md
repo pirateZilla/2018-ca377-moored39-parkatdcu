@@ -1,4 +1,4 @@
-# Park@DCU (Resit)
+# Park@DCU
 
 Each of the major DCU campuses has a limited number of available car parking spaces. An annual challenge is the lack of parking availability at busy times of semester which is increasing now we are a multi-campus university. You are tasked with building an online system to identify the best locations and currently available parking spaces across three DCU campuses - Glasnevin, St Patricks and DCU alpha.
 
