@@ -4,7 +4,7 @@ Each of the major DCU campuses has a limited number of available car parking spa
 
 ## Getting Started
 
-Please see the [briefing notes](client-notes/briefing.pdf) and the [wiki](Home) for information about CA377 and the assignments.
+Please see the [briefing notes](client-notes/briefing.pdf) and the [wiki](https://gitlab.computing.dcu.ie/slittle/2018-ca377-master-parkatdcu/wikis/home#ca377-programming-fundamentals-project-ec3-20172018) for information about CA377 and the assignments.
 
 For an introduction to using GIT, please see Stephen Blott's [notes](https://gitlab.computing.dcu.ie/sblott/local-gitlab-documentation).
 
