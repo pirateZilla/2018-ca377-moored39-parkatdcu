@@ -1,8 +1,3 @@
-image: python:2
-
-before_script:
-  - pip install django
-
 testA0:
   script:
     - "echo ok checking submission for A0"
