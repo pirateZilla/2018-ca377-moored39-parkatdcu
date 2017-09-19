@@ -1,10 +1,10 @@
 testA0:
   script:
+    - "django-admin --version"
     - "echo ok checking submission for A0"
     - "ls -l"
     - "ls docs/README.md"
     - "cat docs/README.md"
     - "echo running python django test"
-    - "django-admin --version"
     - "cd src; python manage.py test park_at_dcu"
     - "echo finished A0 submission checks"
