@@ -13,10 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import patterns, url, include
 from django.contrib import admin
 
 # register the urls for the park_at_dcu application (HINT: use the include function)
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),   
-]
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'tango_with_django_project_17.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+
+    #url(r'^admin/', include(admin.site.urls)),
+    url(r'^park_at_dcu/', include('park_at_dcu.urls')), # ADD THIS NEW TUPLE!
+)
+
+#HELLO

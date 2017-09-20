@@ -1,7 +1,8 @@
-from django.conf.urls import url
+from django.conf.urls import patterns, url
 
-from . import views
+from park_at_dcu import views
 
 app_name = 'park_at_dcu'
 
-# register the index view
+urlpatterns = patterns('',
+    url(r'^$', views.index, name='index'))
