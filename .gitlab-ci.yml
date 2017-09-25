@@ -1,10 +1,26 @@
-testA0:
+testA1:
   script:
-    - "django-admin --version"
-    - "echo ok checking submission for A0"
     - "ls -l"
-    - "ls docs/README.md"
-    - "cat docs/README.md"
-    - "echo running python django test"
-    - "cd src; python manage.py test park_at_dcu"
-    - "echo finished A0 submission checks"
+    - "echo NOTE: this does not check your SQL queries are correct, just that the format can be read."
+    - "ls A1_queries.sql"
+    - "echo check query format"
+    - "F=$(grep -e '-- Q[12345]: ' A1_queries.sql | wc -l)"
+    - "echo $F queries identified"
+    - "if [ $F -ne 5 ]; then echo 'Unable to find all 5 queries. See wiki for format requirements.'; exit 1; fi"
+    - "echo username detected: $CI_PROJECT_NAMESPACE"
+    # the username.sql file should contain all SQL needed to create the database
+    - "ls $CI_PROJECT_NAMESPACE.sql"
+    - "if grep -q -m1 -ioe 'CREATE' $CI_PROJECT_NAMESPACE.sql && grep -q -m1 -ioe 'INSERT' $CI_PROJECT_NAMESPACE.sql; then echo 'SQL appears valid'; else echo 'Error: No CREATE or INSERT statements found.'; exit 1; fi"
+    - "echo finished A1 submission checks"
+
+
+#testA0:
+#  script:
+#    - "django-admin --version"
+#    - "echo ok checking submission for A0"
+#    - "ls -l"
+#    - "ls docs/README.md"
+#    - "cat docs/README.md"
+#    - "echo running python django test"
+#    - "cd src; python manage.py test park_at_dcu"
+#    - "echo finished A0 submission checks"
