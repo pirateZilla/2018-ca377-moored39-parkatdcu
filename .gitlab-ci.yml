@@ -2,6 +2,7 @@ testA1:
   script:
     - "ls -l"
     - "echo NOTE: this does not check your SQL queries are correct, just that the format can be read."
+    - "cd data"
     - "ls A1_queries.sql"
     - "echo check query format"
     - "F=$(grep -e '-- Q[12345]: ' A1_queries.sql | wc -l)"
