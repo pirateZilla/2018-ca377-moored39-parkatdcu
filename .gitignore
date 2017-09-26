@@ -1,0 +1,12 @@
+# Python gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+.static_storage/
+.media/
+local_settings.py
