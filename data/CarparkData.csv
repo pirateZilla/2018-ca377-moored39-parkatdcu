@@ -1,0 +1,16 @@
+Name,Campus,Location,Opening hours,Number of spaces,Number of disabled spaces,Entrance location,Price (per hour),Nearby facilities,Available for
+Multistorey (CP1),Glasnevin,off Collins Ave,08:00 - 22:00,750,17,"53.386284, -6.256948",1,"helix, business, main reception","staff, students, general public"
+Creche (CP2),Glasnevin,off Ballymun Road,07:00 - 22:00,206,3,"53.3868703,-6.2613046",0,"helix, creche, 1838","staff, students"
+Invent (CP3),Glasnevin,next to Invent ,08:00 - 22:00,100,2,"53.3847294,-6.2541186",0,"invent, library, gardens","staff, students"
+Library (CP4),Glasnevin,next to DCU Library,08:00 - 21:00,98,6,"53.384178,-6.2549963",0,"library, residence, sport centre, gardens","staff, students"
+St Pats CP,St Pats,off Drumcondra Road,08:00 - 20:00,67,55,"53.3704012,-6.256567",1,"library, sports grounds","staff, students, general public"
+DCU Alpha CP,DCU Alpha,off Old Finglas Road,08:00 - 18:00,50,4,"53.3764629,-6.2728717",1,"met eireann, sports grounds",members only
+All Hallows CP,All Hallows,off Grace Park Road,08:00 - 17:00,50,4,"53.369901, -6.248072",1,"chapel, o’donnell house","staff, students, general public"
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,...,,,,,,,
