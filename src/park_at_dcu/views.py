@@ -17,5 +17,5 @@ def webservice(request):
     # 1) call the webservice with a particular car park
     # 2) retrieve the returned json in the form of a Python dictionary
     # 3) handle errors in the json (see the 'bad' version of the webservice)
-    # 3) render the template (see last line in index method)
+    # 4) render the template (see last line in index method)
     
