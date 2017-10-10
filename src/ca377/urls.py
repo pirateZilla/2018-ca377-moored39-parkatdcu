@@ -18,7 +18,12 @@ from django.contrib import admin
 
 # register the urls for the park_at_dcu application (HINT: use the include function)
 urlpatterns = [
+
     url(r'^park_at_dcu/', include('park_at_dcu.urls')), # ADD THIS NEW TUPLE!
+
+    url(r'^park_at_dcu/', include('park_at_dcu.urls')),
+    url(r'^admin/', admin.site.urls),   
+
 ]
 
 #HELLO
