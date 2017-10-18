@@ -7,14 +7,14 @@ from django.template import loader
 import json
 import requests
 
-def index(request):
+def index(requests):
 
-  return HttpResponse("Welcome to Park@DCU!")
+   #return HttpResponse("Welcome to Park@DCU!")
 
    template = loader.get_template('park_at_dcu/index.html')
-   return HttpResponse(template.render({},request))
+   return HttpResponse(template.render({},requests))
 
-def webservice(request):
+def webservice(requests):
     template = loader.get_template('park_at_dcu/webservice.html')
     # write code to:
     # 1) call the webservice with a particular car park
@@ -22,4 +22,11 @@ def webservice(request):
     # 3) handle errors in the json (see the 'bad' version of the webservice)
     # 4) render the template (see last line in index method)
     
+#r = requests.get("http://suzannelittle.pythonanywhere.com/carpark/StPats")
+#r.text
 
+
+#data = json.loads(r.text)
+
+#for item in data:
+  #print data[item]
