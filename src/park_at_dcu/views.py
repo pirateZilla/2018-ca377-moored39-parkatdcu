@@ -16,6 +16,8 @@ def index(requests):
 
 def webservice(requests):
     template = loader.get_template('park_at_dcu/webservice.html')
+    return HttpResponse(template.render({},requests))
+
     # write code to:
     # 1) call the webservice with a particular car park
     # 2) retrieve the returned json in the form of a Python dictionary
