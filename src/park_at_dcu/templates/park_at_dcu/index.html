@@ -1,5 +1,19 @@
 <h1>Welcome to Park@DCU!</h1>
+<h2>Real Time Info</h2>
 <form action="{% url 'park_at_dcu:webservice'  %}" method="get">
 Carpark: <input type="text" name="carpark"><br>
 <input type="submit" value = "Go">
 </form>
+<h2>A3 Q1 Find Carpark</h2>
+<form action="{% url 'park_at_dcu:facility'  %}" method="get">
+Facility: <input type="text" name="facility"><br>
+<input type="submit" value = "Go">
+</form>
+<h2>A3 Q2 Number of Spaces</h2>
+<!-- Write form code here -->
+<h2>A3 Q3 Historical Data</h2>
+<!-- Write form code here -->
+<h2>A3 Q4 Historical Data</h2>
+<!-- Write form code here -->
+
+

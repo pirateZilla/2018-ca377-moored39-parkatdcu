@@ -1,0 +1,10 @@
+{% if error_msg %}
+{{ error_msg }}
+{% else %}
+<ul>
+{% for carpark in carparks %}
+    <li>{{ carpark.name }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
