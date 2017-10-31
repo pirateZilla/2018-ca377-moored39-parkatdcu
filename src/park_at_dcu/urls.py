@@ -13,6 +13,7 @@ urlpatterns = [
 # register the index view
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^webservice/$', views.webservice, name='webservice')
+    url(r'^webservice/$', views.webservice, name='webservice'),
+    url(r'^facility/$', views.facility, name='facility'),
     ]
 
