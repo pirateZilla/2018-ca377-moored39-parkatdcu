@@ -69,28 +69,28 @@ def facility(request):
     except Carpark.DoesNotExist:
        return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
     return HttpResponse(template.render({'carparks':carparks},request))
-###from here
-def campus(request):
+
+def spaces(request):
     '''
-    display the car parks suitable for a particular facility
+    display the number of spaces in a campus
     '''
-    template = loader.get_template('park_at_dcu/campus.html')
+    template = loader.get_template('park_at_dcu/spaces.html')
     try:
-       campus = request.GET.get('campus')
-       carparks = Carpark.objects.filter(campus__campus_name=campus)
+       spaces = request.GET.get('spaces')
+       carparks = Carpark.objects.filter(facility__facility_name=facility)
        if len(carparks) == 0:
-         return HttpResponse(template.render({'error_msg':'No carparks for ' + campus}))
-    except Campus.DoesNotExist:
-       return HttpResponse(template.render({'error_msg':'Campus does not exist'}))
+         return HttpResponse(template.render({'error_msg':'No carparks for ' + facility}))
+    except Facility.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Facility does not exist'}))
     except Carpark.DoesNotExist:
        return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
-    return HttpResponse(template.render({'carparks':carparks},request))
+    return HttpResponse(template.render({'carparks':carparks},request))# write code for Q2
 
-def historical(request):
+def occupancy(request):
     '''
-    display the car parks suitable for a particular facility
+    display the historical occupancy for a particular carpark at week 10, 3pm
     '''
-    template = loader.get_template('park_at_dcu/historical.html')
+    template = loader.get_template('park_at_dcu/occupancy.html')
     try:
        facility = request.GET.get('facility')
        carparks = Carpark.objects.filter(facility__facility_name=facility)
@@ -100,27 +100,21 @@ def historical(request):
        return HttpResponse(template.render({'error_msg':'Facility does not exist'}))
     except Carpark.DoesNotExist:
        return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
-    return HttpResponse(template.render({'carparks':carparks},request))
-###to here is all copypasta code
-
-def spaces(request):
-    '''
-    display the number of spaces in a campus
-    '''
-    template = loader.get_template('park_at_dcu/spaces.html')
-    # write code for Q2
-
-def occupancy(request):
-    '''
-    display the historical occupancy for a particular carpark at week 10, 3pm
-    '''
-    template = loader.get_template('park_at_dcu/occupancy.html')
-    # write code for Q3
+    return HttpResponse(template.render({'carparks':carparks},request))# write code for Q3
 
 def carpark_for_time(request):
     '''
     display the carparks for a particular time on 26th Sept. 2016
     '''
     template = loader.get_template('park_at_dcu/carpark_for_time.html')
-    # write code for Q4
+    try:
+       facility = request.GET.get('facility')
+       carparks = Carpark.objects.filter(facility__facility_name=facility)
+       if len(carparks) == 0:
+         return HttpResponse(template.render({'error_msg':'No carparks for ' + facility}))
+    except Facility.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Facility does not exist'}))
+    except Carpark.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
+    return HttpResponse(template.render({'carparks':carparks},request))# write code for Q4
 
