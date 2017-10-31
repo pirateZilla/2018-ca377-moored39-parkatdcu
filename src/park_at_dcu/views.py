@@ -69,7 +69,39 @@ def facility(request):
     except Carpark.DoesNotExist:
        return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
     return HttpResponse(template.render({'carparks':carparks},request))
+###from here
+def campus(request):
+    '''
+    display the car parks suitable for a particular facility
+    '''
+    template = loader.get_template('park_at_dcu/campus.html')
+    try:
+       campus = request.GET.get('campus')
+       carparks = Carpark.objects.filter(campus__campus_name=campus)
+       if len(carparks) == 0:
+         return HttpResponse(template.render({'error_msg':'No carparks for ' + campus}))
+    except Campus.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Campus does not exist'}))
+    except Carpark.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
+    return HttpResponse(template.render({'carparks':carparks},request))
 
+def historical(request):
+    '''
+    display the car parks suitable for a particular facility
+    '''
+    template = loader.get_template('park_at_dcu/historical.html')
+    try:
+       facility = request.GET.get('facility')
+       carparks = Carpark.objects.filter(facility__facility_name=facility)
+       if len(carparks) == 0:
+         return HttpResponse(template.render({'error_msg':'No carparks for ' + facility}))
+    except Facility.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Facility does not exist'}))
+    except Carpark.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
+    return HttpResponse(template.render({'carparks':carparks},request))
+###to here is all copypasta code
 
 def spaces(request):
     '''
