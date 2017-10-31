@@ -76,7 +76,7 @@ def spaces(request):
     '''
     template = loader.get_template('park_at_dcu/spaces.html')
     try:
-       spaces = request.GET.get('spaces')
+       facility = request.GET.get('facility')
        carparks = Carpark.objects.filter(facility__facility_name=facility)
        if len(carparks) == 0:
          return HttpResponse(template.render({'error_msg':'No carparks for ' + facility}))
