@@ -97,7 +97,7 @@ def occupancy(request):
     carpark = HistoricalData.objects.values('pm15').filter(week=10,carpark__name=occupancy)
     
     if len(carpark)== 0:
-       return HttpResponse(template.render({'error_msg': 'invalid carpark name ' }))
+       return HttpResponse(template.render({'error_msg': campus +' is an incorrect carpark name ' }))
     return HttpResponse(template.render({'carpark':carpark},request))
 
 
