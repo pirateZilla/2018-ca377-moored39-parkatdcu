@@ -2,8 +2,8 @@
 {{ error_msg }}
 {% else %}
 <ul>
-{% for carpark in carparks %}
-    <li>{{ carpark.name }}</li>
+{% for x in time %}
+    <li>{{ x.name }}, {{ x.opening_hours }}, {{ x.closing_hours }}</li>
 {% endfor %}
 </ul>
 {% endif %}

@@ -109,9 +109,11 @@ def carpark_for_time(request):
     general public and times 
     '''
     template = loader.get_template('park_at_dcu/carpark_for_time.html')
-    # write code for Q4
-    user_time = int(request.GET.get('carpark_for_time'))#change to time
-    time_conversion=str((datetime.timedelta(hours=user_time)))
+    
+    carpark_for_time = int(request.GET.get('carpark_for_time'))
+
+    time_conversion=str((datetime.timedelta(hours=carpark_for_time)))
+
     time = Carpark.objects.only('campus__name').values('name','opening_hours','closing_hours').filter(is_for_public=1, opening_hours__gte ='08:00:00')
 
 
