@@ -1,5 +1,5 @@
 import csv
-from datetime import time
+
 from park_at_dcu.models import Campus
 
 with open('../data/A3/Campus.csv') as cm:

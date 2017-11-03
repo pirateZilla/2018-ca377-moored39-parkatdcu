@@ -7,7 +7,7 @@ from django.template import loader
 import json
 import requests
 
-from .models import Carpark, Facility, Campus
+from .models import Carpark, Facility, Campus, HistoricalData
 
 def index(request):
    template = loader.get_template('park_at_dcu/index.html')
@@ -75,16 +75,12 @@ def spaces(request):
     display the number of spaces in a campus
     '''
     template = loader.get_template('park_at_dcu/spaces.html')
-    try:
-       facility = request.GET.get('facility')
-       carparks = Carpark.objects.filter(facility__facility_name=facility)
-       if len(carparks) == 0:
-         return HttpResponse(template.render({'error_msg':'No carparks for ' + facility}))
-    except Facility.DoesNotExist:
-       return HttpResponse(template.render({'error_msg':'Facility does not exist'}))
-    except Carpark.DoesNotExist:
-       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
-    return HttpResponse(template.render({'carparks':carparks},request))# write code for Q2
+    spaces = request.GET.get('spaces')
+    campus = Carpark.objects.values('spaces','name').filter(campus__campus_name=spaces)
+    if len(campus)==0:
+      return HttpResponse(template.render({'error_msg':'no carpark associated with this campus ' + spaces}))
+    return HttpResponse(template.render({'campus':campus},request))
+    # write code for Q2
 
 def occupancy(request):
     '''
