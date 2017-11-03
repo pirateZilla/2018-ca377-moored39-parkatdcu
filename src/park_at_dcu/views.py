@@ -69,7 +69,7 @@ def facility(request):
        return HttpResponse(template.render({'error_msg':'Facility does not exist'}))
     except Carpark.DoesNotExist:
        return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
-    return HttpResponse(template.render({'carparks':carparks},request))# it just prints out the name y not the entire row
+    return HttpResponse(template.render({'carparks':carparks},request))
 
 
 def spaces(request):
@@ -78,12 +78,12 @@ def spaces(request):
     '''
     template = loader.get_template('park_at_dcu/spaces.html')
       # write code for Q2
-    spaces= request.GET.get('spaces')# campus name
-    campus = Carpark.objects.values('spaces','name').filter(campus__campus_name=spaces).annotate(sum_created=F('spaces')+F('disabled_spaces'))
+    spaces= request.GET.get('spaces')
+    campus = Carpark.objects.values('spaces','name').filter(campus__name=spaces).annotate(sum_created=F('spaces')+F('disabled_spaces'))
   
     if len(campus)== 0:
        return HttpResponse(template.render({'error_msg':'No carparks'}))
-    return HttpResponse(template.render({'campus':campus},request))# i have to add the deciabled spaces and the other spapces
+    return HttpResponse(template.render({'campus':campus},request))
  
 
 
@@ -92,9 +92,9 @@ def occupancy(request):
     display the historical occupancy for a particular carpark at week 10, 3pm
     '''
     template = loader.get_template('park_at_dcu/occupancy.html')
-    # write code for Q3
+    
     occupancy = request.GET.get('occupancy')
-    carpark = HistoricalData.objects.values('pm15').filter(week=10,carpark__name=occupancy)
+    carpark = HistoricalData.objects.values('pm15').filter(week='10',carpark__name=occupancy)
     
     if len(carpark)== 0:
        return HttpResponse(template.render({'error_msg': 'invalid carpark name ' }))
@@ -112,7 +112,7 @@ def carpark_for_time(request):
     # write code for Q4
     user_time = int(request.GET.get('carpark_for_time'))#change to time
     time_conversion=str((datetime.timedelta(hours=user_time)))
-    time = Carpark.objects.only('campus__campus_name').values('name','opening_hours','closing_hours').filter(is_for_public=1, opening_hours__gte ='08:00:00')
+    time = Carpark.objects.only('campus__name').values('name','opening_hours','closing_hours').filter(is_for_public=1, opening_hours__gte ='08:00:00')
 
 
     #return HttpResponse(time)
