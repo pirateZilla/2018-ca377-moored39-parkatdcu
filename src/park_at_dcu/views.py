@@ -7,6 +7,7 @@ from django.template import loader
 import json
 import requests
 import datetime
+from datetime import time
 from django.db.models import Sum, F
 from .models import Carpark, Facility, Campus, HistoricalData
 
@@ -120,8 +121,4 @@ def carpark_for_time(request):
     #return HttpResponse(time)
     return HttpResponse(template.render({'time':time, 'time_conversion':time_conversion},request))
 
-'''
-select carpark.name, carpark.opening_hours, carpark.closing_hours, campus.campus_name
-from carpark, innerjoin carpark.campus=campus.campus
-'''
 
