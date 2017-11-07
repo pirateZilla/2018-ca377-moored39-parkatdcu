@@ -10,10 +10,18 @@ Facility: <input type="text" name="facility"><br>
 <input type="submit" value = "Go">
 </form>
 <h2>A3 Q2 Number of Spaces</h2>
-<!-- Write form code here -->
+<form action="{% url 'park_at_dcu:spaces'  %}" method="get">
+Campus: <input type="text" name="campus"><br>
+<input type="submit" value = "Go">
+</form>
 <h2>A3 Q3 Occupancy</h2>
-<!-- Write form code here -->
+<form action="{% url 'park_at_dcu:occupancy'  %}" method="get">
+Carpark: <input type="text" name="carpark"><br>
+<input type="submit" value = "Go">
+</form>
 <h2>A3 Q4 Time</h2>
-<!-- Write form code here -->
-
+<form action="{% url 'park_at_dcu:carpark_for_time'  %}" method="get">
+Time: <input type="text" name="time"><br>
+<input type="submit" value = "Go">
+</form>
 
