@@ -6,8 +6,9 @@ from django.http import HttpResponse
 from django.template import loader
 import json
 import requests
+from datetime import time
 
-from .models import Carpark, Facility, Campus
+from .models import Carpark, Facility, Campus, HistoricalData
 
 def index(request):
    template = loader.get_template('park_at_dcu/index.html')
@@ -73,23 +74,64 @@ def facility(request):
 
 def spaces(request):
     '''
-    display the number of spaces in a campus
+    display the number of spaces for a campus
     '''
     template = loader.get_template('park_at_dcu/spaces.html')
-    # write code for Q2
+    try:
+       campus = request.GET.get('campus')
+       carparks = Carpark.objects.filter(campus__name=campus)
+       if len(carparks) == 0:
+          return HttpResponse(template.render({'error_msg':'No carparks for ' + campus}))
+       count = 0
+       for carpark in carparks:
+          count = count + carpark.spaces
+       return HttpResponse(template.render({'count':count},request))   
+    except Campus.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Campus does not exist'}))
+    except Carpark.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
+    
 
 def occupancy(request):
     '''
-    display the historical occupancy for a particular carpark at week 10, 3pm
+    display the occupancy for a campus
     '''
     template = loader.get_template('park_at_dcu/occupancy.html')
-    # write code for Q3
+    try:
+       carpark = request.GET.get('carpark')
+       data = HistoricalData.objects.get(carpark__name=carpark,week=10)
+       occupancy = data.pm15
+       return HttpResponse(template.render({'occupancy':occupancy},request))
+    except HistoricalData.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Historical data does not exist for this carpark'}))
+    
 
 def carpark_for_time(request):
     '''
     display the carparks for a particular time on 26th Sept. 2016
     '''
     template = loader.get_template('park_at_dcu/carpark_for_time.html')
-    # write code for Q4
+    
+    try:
+       hour = time(hour=int(request.GET.get('time')))
+       
+       carparks = Carpark.objects.filter(is_for_public=1)
+       carpark_info = []
+       for carpark in carparks:
+           opening_hours = carpark.opening_hours
+           closing_hours = carpark.closing_hours
+           if opening_hours <= hour < closing_hours:
+              name = carpark.name
+              campus = Campus.objects.get(carpark__name=name)
+              carpark_info.append(name+', '+campus.name)
+       if len(carpark_info) == 0:
+          return HttpResponse(template.render({'error_msg':'No carparks for general public at this time'}))   
+       else:
+          return HttpResponse(template.render({'carparks':carpark_info}))
 
-
+    except ValueError:
+       return HttpResponse(template.render({'error_msg':'Invalid time'}))
+    except Carpark.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
+    except Campus.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Campus does not exist'}))
