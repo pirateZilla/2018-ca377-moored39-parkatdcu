@@ -1,34 +1,27 @@
 <h1>Welcome to Park@DCU!</h1>
 <h2>Real Time Info</h2>
-
-
 <form action="{% url 'park_at_dcu:webservice'  %}" method="get">
 Carpark: <input type="text" name="carpark"><br>
 <input type="submit" value = "Go">
 </form>
-
 <h2>A3 Q1 Find Carpark</h2>
 <form action="{% url 'park_at_dcu:facility'  %}" method="get">
 Facility: <input type="text" name="facility"><br>
 <input type="submit" value = "Go">
 </form>
-
 <h2>A3 Q2 Number of Spaces</h2>
 <form action="{% url 'park_at_dcu:spaces'  %}" method="get">
-Campus: <input type="text" name="spaces"><br>
+Campus: <input type="text" name="campus"><br>
 <input type="submit" value = "Go">
 </form>
-
 <h2>A3 Q3 Occupancy</h2>
 <form action="{% url 'park_at_dcu:occupancy'  %}" method="get">
-Occupancy: <input type="text" name="occupancy"><br>
+Carpark: <input type="text" name="carpark"><br>
 <input type="submit" value = "Go">
 </form>
-
 <h2>A3 Q4 Time</h2>
-<form action="{% url 'park_at_dcu:carpark_for_time'  %}" method="get"><!--need to change 'facility' -->
+<form action="{% url 'park_at_dcu:carpark_for_time'  %}" method="get">
 Time: <input type="text" name="time"><br>
 <input type="submit" value = "Go">
 </form>
-
 

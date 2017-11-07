@@ -1,10 +1,6 @@
 {% if error_msg %}
 {{ error_msg }}
 {% else %}
-<ul>
-{% for x in campus %}
-    <li>{{ x.name }}, {{ x.spaces }}</li>
-{% endfor %}
-</ul>
+No of spaces: {{ count }}
 {% endif %}
 

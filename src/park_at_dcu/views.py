@@ -6,9 +6,8 @@ from django.http import HttpResponse
 from django.template import loader
 import json
 import requests
-import datetime
 from datetime import time
-from django.db.models import Sum, F
+
 from .models import Carpark, Facility, Campus, HistoricalData
 
 def index(request):
@@ -75,50 +74,65 @@ def facility(request):
 
 def spaces(request):
     '''
-    display the number of spaces in a campus
+    display the number of spaces for a campus
     '''
     template = loader.get_template('park_at_dcu/spaces.html')
-      # write code for Q2
-    spaces= request.GET.get('spaces')
-    campus = Carpark.objects.values('spaces','name').filter(campus__name=spaces).annotate(sum_created=F('spaces')+F('disabled_spaces'))
-  
-    if len(campus)== 0:
-       return HttpResponse(template.render({'error_msg':'No carparks'}))
-    return HttpResponse(template.render({'campus':campus},request))
- 
-
+    try:
+       campus = request.GET.get('campus')
+       carparks = Carpark.objects.filter(campus__name=campus)
+       if len(carparks) == 0:
+          return HttpResponse(template.render({'error_msg':'No carparks for ' + campus}))
+       count = 0
+       for carpark in carparks:
+          count = count + carpark.spaces
+       return HttpResponse(template.render({'count':count},request))   
+    except Campus.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Campus does not exist'}))
+    except Carpark.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
+    
 
 def occupancy(request):
     '''
-    display the historical occupancy for a particular carpark at week 10, 3pm
+    display the occupancy for a campus
     '''
     template = loader.get_template('park_at_dcu/occupancy.html')
+    try:
+       carpark = request.GET.get('carpark')
+       data = HistoricalData.objects.get(carpark__name=carpark,week=10)
+       occupancy = data.pm15
+       return HttpResponse(template.render({'occupancy':occupancy},request))
+    except HistoricalData.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Historical data does not exist for this carpark'}))
     
-    occupancy = request.GET.get('occupancy')
-    carpark = HistoricalData.objects.values('pm15').filter(week='10',carpark__name=occupancy)
-    
-    if len(carpark)== 0:
-       return HttpResponse(template.render({'error_msg': 'invalid carpark name ' }))
-    return HttpResponse(template.render({'carpark':carpark},request))
-
-
-
 
 def carpark_for_time(request):
     '''
     display the carparks for a particular time on 26th Sept. 2016
-    general public and times 
     '''
     template = loader.get_template('park_at_dcu/carpark_for_time.html')
     
-    carpark_for_time = int(request.GET.get('carpark_for_time'))
+    try:
+       hour = time(hour=int(request.GET.get('time')))
+       
+       carparks = Carpark.objects.filter(is_for_public=1)
+       carpark_info = []
+       for carpark in carparks:
+           opening_hours = carpark.opening_hours
+           closing_hours = carpark.closing_hours
+           if opening_hours <= hour < closing_hours:
+              name = carpark.name
+              campus = Campus.objects.get(carpark__name=name)
+              carpark_info.append(name+', '+campus.name)
+       if len(carpark_info) == 0:
+          return HttpResponse(template.render({'error_msg':'No carparks for general public at this time'}))   
+       else:
+          return HttpResponse(template.render({'carparks':carpark_info}))
 
-    time_conversion=str((datetime.timedelta(hours=carpark_for_time)))
-
-    time = Carpark.objects.only('campus__name').values('name','opening_hours','closing_hours').filter(is_for_public=1, opening_hours__gte ='08:00:00')
-
-
-    #return HttpResponse(time)
-    return HttpResponse(template.render({'time':time, 'time_conversion':time_conversion},request))
-
+    except ValueError:
+       return HttpResponse(template.render({'error_msg':'Invalid time'}))
+    except Carpark.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Carpark does not exist'}))
+    except Campus.DoesNotExist:
+       return HttpResponse(template.render({'error_msg':'Campus does not exist'}))
 
