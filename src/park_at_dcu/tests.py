@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.test import TestCase
 from django.urls import reverse
 
-from park_at_dcu.models import Carpark,Facility,Campus,HistoricalData
+from models import Carpark,Facility,Campus,HistoricalData
 from datetime import time
 
 # Create your tests here.
@@ -83,5 +83,62 @@ class DatabaseTests(TestCase):
         response = self.client.get(reverse('park_at_dcu:occupancy'),{'historicaldata':'Test his'})
         self.assertEqual(response.status_code,200)
         self.assertNotContains(response, {})
+
+    def test_historicaldata_error(self): #TEST CASE 3 
+    
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:occupancy'),{'historicaldata':'Invalid his'})
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, {})
+
+    def test_facility(self):
+        """                                                                            Test retrieving carparks for a given facility
+        """
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:facility'),{'facility':'Test Facility'})
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, 'CP1')
+
+    def test_facility_error(self):
+        """                                                                            Test error handling when retrieving carparks for a given facility
+        """
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:facility'),{'facility':'Invalid Facility'})
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, 'No carparks')
+
+    def test_spaces(self):
+        """                                                                            Test retrieving carpark spaces for a campus
+        """
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:spaces'),{'campus':'Test Campus'})
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, '1300')
+
+    def test_spaces_error(self):
+        """                                                                            Test error handling when retrieving carpark spaces for a campus
+        """
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:spaces'),{'campus':'Invalid Campus'})
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, 'No carparks')
+
+    def test_time(self):
+        """                                                                            Test retrieving carparks available to the general public for a particular time
+        """
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:carpark_for_time'),{'time':'7'})
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, 'CP2')
+        self.assertNotContains(response,'CP1')
+        self.assertNotContains(response,'CP3')
+
+    def test_time_error(self):
+        """                                                                            Test error handling when retrieving carparks available to the general public for a particular time
+        """
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:carpark_for_time'),{'time':'25'})
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, 'Invalid time')
 
 
