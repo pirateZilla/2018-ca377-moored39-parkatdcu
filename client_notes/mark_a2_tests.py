@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# For marking purposes, some tests are designed to work with a non-randomized version of the website 
+# which associates specific errors with specific carparks
 from __future__ import unicode_literals
 
 from django.test import TestCase
@@ -10,7 +12,8 @@ from datetime import time
 class WebServiceTests(TestCase):
     
     def test_webservice(self):
-        """                                                                            Test calling of webservice for each carpark
+        """
+        Test calling of webservice for each carpark
         """ 
         for carpark in ['multistorey','creche','invent','library','StPats','alpha','allhallows']:
            self.webservice(carpark)
@@ -25,13 +28,14 @@ class WebServiceTests(TestCase):
     def test_webservice_401(self):
         '''
         Test what happens when a 401 is returned
+        Works with non-randomized version of the website which associates specific errors with specific carparks
         '''
         response = self.client.get(reverse('park_at_dcu:webservice'),{'carpark':'creche','version':'bad'})
         self.assertContains(response,'Sorry')
     
     def test_webservice_503(self):
         '''
-        Test what happens when a 404 is returned
+        Test what happens when a 503 is returned
         '''
         response = self.client.get(reverse('park_at_dcu:webservice'),{'carpark':'multistorey','version':'bad'})
         self.assertContains(response,'Sorry')
@@ -65,7 +69,8 @@ class WebServiceTests(TestCase):
         self.assertContains(response,'Invalid JSON')
     
     def test_invalid_name(self):
-        """                                                                            Test calling webservice for invalid carpark  
+        """
+        Test calling webservice for invalid carpark  
         """
         response = self.client.get(reverse('park_at_dcu:webservice'),{'carpark':'multistory'})
         self.assertEqual(response.status_code,200)
@@ -74,7 +79,8 @@ class WebServiceTests(TestCase):
         self.assertNotContains(response,'<table>')
             
     def webservice(self, carpark):
-        """                                                                            Test calling webservice for individual carpark  
+        """
+        Test calling webservice for individual carpark  
         """
         response = self.client.get(reverse('park_at_dcu:webservice'),{'carpark':carpark})
         self.assertEqual(response.status_code,200)
@@ -82,7 +88,8 @@ class WebServiceTests(TestCase):
         self.assertNotContains(response,'An error has occurred')
 
     def bad_webservice(self,carpark):
-        """                                                                            Test calling bad webservice for individual carpark  
+        """
+        Test calling bad webservice for individual carpark  
         """
         response = self.client.get(reverse('park_at_dcu:webservice'),{'carpark':carpark,'version':'bad'})
         self.assertEqual(response.status_code,200)
