@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^facility/$', views.facility, name='facility'),
     url(r'^spaces/$', views.spaces, name='spaces'),
     url(r'^occupancy/$', views.occupancy, name='occupancy'),
-    url(r'^carpark_for_time/$', views.carpark_for_time, name='carpark_for_time')
+    url(r'^carpark_for_time/$', views.carpark_for_time, name='carpark_for_time'),
     ]
 

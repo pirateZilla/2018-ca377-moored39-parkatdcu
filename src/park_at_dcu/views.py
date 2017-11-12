@@ -108,7 +108,7 @@ def occupancy(request):
 
 def carpark_for_time(request):
     '''
-    display the carparks for a particular time on 26th Sept. 2016
+    display the carparks for a particular time
     '''
     template = loader.get_template('park_at_dcu/carpark_for_time.html')
     

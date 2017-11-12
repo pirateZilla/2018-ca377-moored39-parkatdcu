@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.test import TestCase
 from django.urls import reverse
 
-from models import Carpark,Facility,Campus,HistoricalData
+from .models import Carpark,Facility,Campus,HistoricalData
 from datetime import time
 
 # Create your tests here.
@@ -68,28 +68,12 @@ class DatabaseTests(TestCase):
         carpark2 = Carpark(2, 'Test CP2', 1,'Ballymun Road',time(hour=7),time(hour=22),250,23,"53.386284, -6.256948",0,1)
         carpark3 = Carpark(3, 'Test CP3', 1,'off Collins Ave',time(hour=7),time(hour=22),300,25,"37.386284, -10.256948",0,0)
         facility = Facility(1,'Test Facility',1)
-        historicaldata = HistoricalData('1',94,10,'83%','71%','12%','66%','89%','47%','17%','46%','2%','7%','84%','47%','9%','1%','64%')
         campus.save()
         carpark1.save()
         carpark2.save()
         carpark3.save()
         facility.save()
-        historicaldata.save()
-        
-
-    def test_historicaldata(self): #TEST CASE 3 
-    
-        self.setup()
-        response = self.client.get(reverse('park_at_dcu:occupancy'),{'historicaldata':'Test his'})
-        self.assertEqual(response.status_code,200)
-        self.assertNotContains(response, {})
-
-    def test_historicaldata_error(self): #TEST CASE 3 
-    
-        self.setup()
-        response = self.client.get(reverse('park_at_dcu:occupancy'),{'historicaldata':'Invalid his'})
-        self.assertEqual(response.status_code,200)
-        self.assertContains(response, {})
+                  
 
     def test_facility(self):
         """                                                                            Test retrieving carparks for a given facility
@@ -140,5 +124,22 @@ class DatabaseTests(TestCase):
         response = self.client.get(reverse('park_at_dcu:carpark_for_time'),{'time':'25'})
         self.assertEqual(response.status_code,200)
         self.assertContains(response, 'Invalid time')
+
+
+    def test_historicaldata(self): #test 
+    
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:occupancy'),{'carpark':'Test CP1'})
+        self.assertEqual(response.status_code,200)
+        self.assertNotContains(response, "22%")
+        self.assertNotContains(response,'No data')
+
+
+    def test_historicaldata_error(self): #errortest 
+    
+        self.setup()
+        response = self.client.get(reverse('park_at_dcu:occupancy'),{'carpark':'Invalid carpark'})
+        self.assertEqual(response.status_code,200)
+        self.assertNotContains(response, 'No data')
 
 
