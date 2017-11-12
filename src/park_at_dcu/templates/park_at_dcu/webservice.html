@@ -1,3 +1,5 @@
+{% if carpark_name == None %}
+<b>An error has occurred</b>
 {% else %}
 <table>
 
@@ -9,15 +11,6 @@
   
    </tr>
    
-<!-- Display the values in the next row -->
-   
-   <tr>
-      
-      <th>{{carpark_name}}</th>
-      <th>{{spaces_available}}</th>
-      <th>{{timestamp}}</th>
-          
-   </tr>
 
    <tr>
       <td>{{ carpark_name }}</td><td>{{ spaces_available }}</td><td>{{ timestamp }}</td>

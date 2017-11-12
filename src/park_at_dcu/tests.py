@@ -135,7 +135,7 @@ class DatabaseTests(TestCase):
         self.setup()
         response = self.client.get(reverse('park_at_dcu:occupancy'),{'carpark':'Test CP1'})
         self.assertEqual(response.status_code,200)
-        self.assertNotContains(response, "22%")
+        self.assertContains(response, "2%")
         self.assertNotContains(response,'No data')
 
 
