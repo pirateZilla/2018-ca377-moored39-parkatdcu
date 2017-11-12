@@ -68,12 +68,16 @@ class DatabaseTests(TestCase):
         carpark2 = Carpark(2, 'Test CP2', 1,'Ballymun Road',time(hour=7),time(hour=22),250,23,"53.386284, -6.256948",0,1)
         carpark3 = Carpark(3, 'Test CP3', 1,'off Collins Ave',time(hour=7),time(hour=22),300,25,"37.386284, -10.256948",0,0)
         facility = Facility(1,'Test Facility',1)
+        historicaldata = HistoricalData(1,1,10,'83%','71%','12%','66%','89%','47%','17%','46%','2%','7%','84%','47%','9%','1%','64%')
         campus.save()
         carpark1.save()
         carpark2.save()
         carpark3.save()
         facility.save()
-                  
+        historicaldata.save()
+        
+
+    
 
     def test_facility(self):
         """                                                                            Test retrieving carparks for a given facility
