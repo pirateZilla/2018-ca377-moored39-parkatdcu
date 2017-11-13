@@ -1,3 +1,10 @@
+testA4:
+  script:
+    - "echo ok checking submission for A4"
+    - "ls docs/url.txt"
+    - "echo check that pythonanywhere.com exists in url.txt"
+    - "if grep -vq 'pythonanywhere.com' docs/url.txt; then echo 'pythonanywhere.com not found'; exit 1; fi"
+
 testA3:
   script:
     - "echo ok checking submission for A3"
