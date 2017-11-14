@@ -1,23 +1,23 @@
-testA4:
-  script:
-    - "echo ok checking submission for A4"
-    - "ls docs/url.txt"
-    - "echo check that pythonanywhere.com exists in url.txt"
-    - "if  grep -vq 'pythonanywhere.com' docs/url.txt; then echo 'pythonanywhere.com not found'; exit 1; fi"
+#testA4:
+#  script:
+#    - "echo ok checking submission for A4"
+#    - "ls docs/url.txt"
+#    - "echo check that pythonanywhere.com exists in url.txt"
+#    - "if  grep -vq 'pythonanywhere.com' docs/url.txt; then echo 'pythonanywhere.com not found'; exit 1; fi"
 
-testA3:
-  script:
-    - "echo ok checking submission for A3"
-    - "cd src;"
-    - "echo creating database tables"
-    - "python3 manage.py makemigrations park_at_dcu"
-    - "python3 manage.py migrate"
-    - "echo checking for data_loading scripts"
-    - "ls park_at_dcu/load_historical_data.py"
-    - "ls park_at_dcu/load_campus_data.py"
-    - "echo running python django test"
-    - "python3 manage.py test park_at_dcu"
-    - "echo finished A3 submission checks"
+#testA3:
+#  script:
+#    - "echo ok checking submission for A3"
+#    - "cd src;"
+#    - "echo creating database tables"
+#    - "python3 manage.py makemigrations park_at_dcu"
+#    - "python3 manage.py migrate"
+#    - "echo checking for data_loading scripts"
+#    - "ls park_at_dcu/load_historical_data.py"
+#    - "ls park_at_dcu/load_campus_data.py"
+#    - "echo running python django test"
+#    - "python3 manage.py test park_at_dcu"
+#    - "echo finished A3 submission checks"
 
 
 #testA2:
