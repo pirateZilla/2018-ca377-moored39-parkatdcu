@@ -81,7 +81,6 @@ class DatabaseTests(TestCase):
         """
         self.setup()
         response = self.client.get(reverse('park_at_dcu:occupancy'),{'carpark':'Test CP1'})
-        print response.content
         self.assertEqual(response.status_code,200)
         self.assertContains(response,'15%')
 
