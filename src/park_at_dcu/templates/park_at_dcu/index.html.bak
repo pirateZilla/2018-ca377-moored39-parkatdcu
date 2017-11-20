@@ -1,5 +1,3 @@
-{% load static %}
-
 <!doctype html>
 <html lang="en">
  <head>
@@ -11,7 +9,7 @@
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="{% static 'main.css' %}">
+	<link rel="stylesheet" href="main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Park@DCU</title>
  </head>
@@ -346,9 +344,9 @@
 <h1>Car Parking at DCU</h1>
 <ul class="rig columns-4">
 	<li>
-		<img class="campus w3-animate-fading" src="{% static 'campus1.jpg' %}"/>
-		<img class="campus w3-animate-fading" src="{% static 'campus2.jpg' %}"/>
-		<img class="campus w3-animate-fading" src="{% static 'campus3.jpg' %}"/>
+		<img class="campus w3-animate-fading" src="campus1.jpg"/>
+		<img class="campus w3-animate-fading" src="campus2.jpg"/>
+		<img class="campus w3-animate-fading" src="campus3.jpg"/>
 		<h2>Search by Car Park</h2>
 		<form action="{% url 'park_at_dcu:webservice'  %}" method="get">
 			Select Carpark:  <select name="carpark">
@@ -360,15 +358,15 @@
    				<option value="Library">Library</option>  
   				<option value="All Hallows">All Hallows</option>  
 				</select>
-				<input class="button" type="submit" value = "Enter">
+				<input type="submit" value = "Enter">
 		</form>
 
 	</li>
 	
 	<li>
-		<img class="fac w3-animate-fading" src="{% static 'fac1.jpg' %}"/>
-		<img class="fac w3-animate-fading" src="{% static 'fac2.jpg' %}"/>
-		<img class="fac w3-animate-fading" src="{% static 'fac3.jpg' %}"/>
+		<img class="fac w3-animate-fading" src="fac1.jpg"/>
+		<img class="fac w3-animate-fading" src="fac2.jpg"/>
+		<img class="fac w3-animate-fading" src="fac3.jpg"/>
 		<h2>Search By Facility</h2>
 		<form action="{% url 'park_at_dcu:facility'  %}" method="get">
 			Select Facility:  <select name="facility">
@@ -383,15 +381,15 @@
 				<option value="business">business</option> 
 				<option value="1838">1838</option>  
 			</select>
-			<input class="button" type="submit" value = "Enter">
+			<input type="submit" value = "Enter">
 		</form>
 
 	</li>
 	
 	<li>
-		<img class="car w3-animate-fading" src="{% static 'car1.jpg' %}"/>
-		<img class="car w3-animate-fading" src="{% static 'car2.jpg' %}"/>
-		<img class="car w3-animate-fading" src="{% static 'car3.jpg' %}"/>
+		<img class="car w3-animate-fading" src="car1.jpg"/>
+		<img class="car w3-animate-fading" src="car2.jpg"/>
+		<img class="car w3-animate-fading" src="car3.jpg"/>
 		<h2>Real Time Occupancy</h2>
 		<form action="{% url 'park_at_dcu:occupancy'  %}" method="get">
 			Select Carpark:  <select name="carpark">
@@ -404,19 +402,19 @@
 				<option value="DCU Alpha CP">DCU Alpha</option>  
 				<option value="All Hallows CP">All Hallows</option>  
 			</select>
-			<input class="button" type="submit" value = "Enter">
+			<input type="submit" value = "Enter">
   		</form>
 
 	</li>
 	
 	<li>
-		<img class="time w3-animate-fading" src="{% static 'time1.jpg' %}"/>
-		<img class="time w3-animate-fading" src="{% static 'time2.jpg' %}"/>
-		<img class="time w3-animate-fading" src="{% static 'time3.jpg' %}"/>
+		<img class="time w3-animate-fading" src="time1.jpg"/>
+		<img class="time w3-animate-fading" src="time2.jpg"/>
+		<img class="time w3-animate-fading" src="time3.jpg"/>
 		<h2>Search By Time</h2>
 			<form action="{% url 'park_at_dcu:carpark_for_time'  %}" method="get">
 				Time: <input type="text" name="time">
-					<input class="button" type="submit" value = "Go">
+					<input type="submit" value = "Go">
 			</form>
 
 	</li>
