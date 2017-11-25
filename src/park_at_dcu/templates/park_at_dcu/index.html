@@ -13,19 +13,9 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="{% static 'main.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-	<script src="jquery-3.2.1.min.js">
-
-    var select = '';
-    for (i=1;i<=100;i++){
-        select += '<option val=' + i + '>' + i + '</option>';
-    }
-    $('#some_select').html(select);
-
-	
-	</script>
-
   <title>Park@DCU</title>
+
+
  </head>
  <body>
   
@@ -395,8 +385,6 @@
 				<option value="business">business</option> 
 				<option value="1838">1838</option>  
 			</select>
-			<select id='some_select'></select>
-			
 			<input class="button" type="submit" value = "Enter">
 		</form>
 
@@ -429,24 +417,7 @@
 		<img class="time w3-animate-fading" src="{% static 'time3.jpg' %}"/>
 		<h2>Search By Time</h2>
 			<form action="{% url 'park_at_dcu:carpark_for_time'  %}" method="get">
-				Select Time: <select name="time">
-					<option value="7">7am</option>
-					<option value="8">8am</option>
-					<option value="9">9am</option>
-					<option value="10">10am</option>
-					<option value="11">11am</option>
-					<option value="12">12pm</option>
-					<option value="13">1pm</option>
-					<option value="14">2pm</option>
-					<option value="15">3pm</option>
-					<option value="16">4pm</option>
-					<option value="17">5pm</option>
-					<option value="18">6pm</option>
-					<option value="19">7pm</option>
-					<option value="20">8pm</option>
-					<option value="21">9pm</option>
-					<option value="22">10pm</option>	
-			</select>
+				Time: <input type="text" name="time">
 					<input class="button" type="submit" value = "Go">
 			</form>
 
@@ -518,7 +489,7 @@ function carousel4() {
 
 </script>
 					
-			
+					
 					
 					
 
