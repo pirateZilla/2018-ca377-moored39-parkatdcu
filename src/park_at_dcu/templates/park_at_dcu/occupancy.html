@@ -11,23 +11,25 @@
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!--<link rel="stylesheet" href="{% static 'main.css' %}">-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Park@DCU</title>
 <style>
-table {
+.main table {
     /*border-collapse: collapse;*/
     width: 100%;
 }
 
-th, td {
+.main th, td {
     text-align: left;
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+.main tr:nth-child(even){background-color: #f2f2f2}
 
-th {
+.main th {
     background-color:  #125E9D;
     color: white;
 }
@@ -283,43 +285,125 @@ ul.rig.columns-4 li {
 }
 
 .button {
-
-  background-color: #f1ede6;
-  color:#259abb;
-  /*background-image: -webkit-linear-gradient(top, #e22882, #259abb);
-  background-image: -moz-linear-gradient(top, #e22882, #259abb);
-  background-image: -ms-linear-gradient(top, #e22882, #259abb);
-  background-image: -o-linear-gradient(top, #e22882, #259abb);
-  background-image: linear-gradient(to bottom, #e22882, #259abb);
-  -webkit-border-radius: 11;
-  -moz-border-radius: 11;
-  border-radius: 11px;
-  text-shadow: 1px 1px 3px #666666;
-  font-family: Courier New;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  border: dotted #ffffff 2px;*/
+  background-color: #259abb;
+  color:#ffffff;
   text-decoration: none;
   border:none;
   margin:4px 2px;
   width:100%;
+  height:40px;
 }
 
 .button:hover {
-  background-color: #259abb;
-  color:#ffffff;
-  /*background-image: -webkit-linear-gradient(top, #259abb, #e22882);
-  background-image: -moz-linear-gradient(top, #259abb, #e22882);
-  background-image: -ms-linear-gradient(top, #259abb, #e22882);
-  background-image: -o-linear-gradient(top, #259abb, #e22882);
-  background-image: linear-gradient(to bottom, #259abb, #e22882);*/
+  background-color: #f1ede6;
+  color:#259abb;
   text-decoration: none;
   border:none;
   margin:4px 2px;
   width:100%;
+  height:40px;
 }
 
+ul.foot {
+	list-style: none;
+	font-size: 0px;
+	margin-left: -2.5%; /* should match li left margin */
+}
+
+ul.foot.columns-3 li {
+	width: 30.83%; /* this value + 2.5 should = 33% */
+}
+
+ul.foot li {
+	height:50px
+	font-family:Helvetica;
+	display: inline-block;
+	padding: 10px;
+	margin: 0 0 2.5% 2.5%;
+	background: #FFFFFF;
+	/*border: 1px solid #ddd;*/
+	font-size: 16px;
+	font-size: 1rem;
+	vertical-align: top;
+	/*box-shadow: 0 0 5px #ddd;*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+ul.foot li img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 0 10px;
+}
+ul.foot li h2 {
+	color:#125E9D;
+	margin: 0 0 5px;
+	font-family:Helvetica;
+}
+ul.foot li p {
+	font-size: .9em;
+	line-height: 1.5em;
+	color: #976F61;
+}
+ul.foot li a {
+	text-decoration:none;
+
+}
+
+ul.foot td {
+	width:150px;
+	font-size:8pt;
+	color:#259abb;
+
+
+
+}
+
+
+.social-networks {
+	text-align:center;
+
+}
+
+.social-networks a{
+    font-size: 32px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #756660;
+    margin-top:0px;
+    transition: 0.2s;
+}
+
+p.centered.social-networks a:hover{
+	text-decoration: none;
+
+}
+
+.facebook:hover{
+	color:#0077e2;
+}
+
+.youtube:hover{
+	color:#cc181e;
+}
+
+.twitter:hover{
+	color: #00aced;
+}
+
+.instagram:hover{
+	color: #8a3ab9;
+}
+
+p.right img {
+    padding-left:30px;
+}
+
+p.left li {
+    width:200px;
+    color:#259abb !important;
+    padding-top:0px;
+}
 
 </style>
 
@@ -341,53 +425,54 @@ ul.rig.columns-4 li {
 	<ul id="navmenu">
 		<div class="container-fluid">
 
+
 					<li><img src="https://www4.dcu.ie/sites/default/files/dcu_logo_2colh100.jpg"></img></li>
 
-					<li><a href="https://www.dcu.ie/">Explore</a>
+					<li><a href="#">Explore</a>
 						<ul class="sub1">
-							<li><a href="https://www.dcu.ie/">About DCU</a>
+							<li><a href="#">About DCU</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Transforming Lives & Societies</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Governing Authority</a></li>
-									<li><a href="https://www.dcu.ie/">Policies</a></li>
-									<li><a href="https://www.dcu.ie/">Disclaimer</a></li>
-									<li><a href="https://www.dcu.ie/">Vacancies</a></li>
+									<li><a href="https://www.dcu.ie/transforming-lives-and-societies.shtml">Transforming Lives & Societies</a></li>
+									<li><a href="https://www.dcu.ie/governance/index.shtml">DCU Governing Authority</a></li>
+									<li><a href="http://www4.dcu.ie/policies/index.shtml">Policies</a></li>
+									<li><a href="https://www.dcu.ie/info/legal.shtml">Disclaimer</a></li>
+									<li><a href="https://www.dcu.ie/hr/vacancies/index.shtml">Vacancies</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Our Campuses</a>
+							<li><a href="#">Our Campuses</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Location & Directions</a></li>
-									<li><a href="https://www.dcu.ie/">Campus Maps</a></li>
-									<li><a href="https://www.dcu.ie/">Parking</a></li>
-									<li><a href="https://www.dcu.ie/">Safety & Security</a></li>
-									<li><a href="https://www.dcu.ie/">Accessible University</a></li>
-									<li><a href="https://www.dcu.ie/">Accommodation</a></li>
-									<li><a href="https://www.dcu.ie/">Library</a></li>
-									<li><a href="https://www.dcu.ie/">The Helix</a></li>
+									<li><a href="https://www.dcu.ie/info/get_to.shtml">Location & Directions</a></li>
+									<li><a href="https://www.dcu.ie/info/campus.shtml">Campus Maps</a></li>
+									<li><a href="https://www.dcu.ie/estates/parking.shtml">Parking</a></li>
+									<li><a href="https://www.dcu.ie/safety/index.shtml">Safety & Security</a></li>
+									<li><a href="https://www.disabledgo.com/en/org/dublin-city-university">Accessible University</a></li>
+									<li><a href="http://www.dcuaccommodation.ie/">Accommodation</a></li>
+									<li><a href="https://www.dcu.ie/library/index.shtml">Library</a></li>
+									<li><a href="http://thehelix.ie/">The Helix</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Experience DCU</a>
+							<li><a href="#">Experience DCU</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Video Gallery</a></li>
-									<li><a href="https://www.dcu.ie/">DCU by Numbers</a></li>
-									<li><a href="https://www.dcu.ie/">Engaging with DCU</a></li>
-									<li><a href="https://www.dcu.ie/">University of Enterprise</a></li>
-									<li><a href="https://www.dcu.ie/">Sport at DCU</a></li>
+									<li><a href="https://www.dcu.ie/video-showcase.shtml">Video Gallery</a></li>
+									<li><a href="https://www.dcu.ie/dcu-by-numbers.shtml">DCU by Numbers</a></li>
+									<li><a href="https://www.dcu.ie/engaging-dcu.shtml">Engaging with DCU</a></li>
+									<li><a href="https://www.dcu.ie/university-of-enterprise.shtml">University of Enterprise</a></li>
+									<li><a href="https://www.dcu.ie/sport/index.shtml">Sport at DCU</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Services & Facilities</a>
+							<li><a href="#">Services & Facilities</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Language Translation Services</a></li>
-									<li><a href="https://www.dcu.ie/">Inter Faith Centre</a></li>
-									<li><a href="https://www.dcu.ie/">Restaurants</a></li>
-									<li><a href="https://www.dcu.ie/">University Sports Complex</a></li>
-									<li><a href="https://www.dcu.ie/">Healthy Living Centre</a></li>
-									<li><a href="https://www.dcu.ie/">Bookshop</a></li>
-									<li><a href="https://www.dcu.ie/">Bank</a></li>
-									<li><a href="https://www.dcu.ie/">Creche</a></li>
-									<li><a href="https://www.dcu.ie/">Hairdresser</a></li>
-									<li><a href="https://www.dcu.ie/">Pharmacy</a></li>
-									<li><a href="https://www.dcu.ie/">Print Shop</a></li>
+									<li><a href="https://dculs.dcu.ie/">Language Translation Services</a></li>
+									<li><a href="https://www.dcu.ie/chaplaincy/index.shtml">Inter Faith Centre</a></li>
+									<li><a href="https://www.dcu.ie/catering/index.shtml">Restaurants</a></li>
+									<li><a href="https://www.dcu.ie/dcusport/index.shtml">University Sports Complex</a></li>
+									<li><a href="http://hlc.dcu.ie/">Healthy Living Centre</a></li>
+									<li><a href="http://www.dcu.ie/info/facilities-on-campus.shtml#bookshop">Bookshop</a></li>
+									<li><a href="http://www.dcu.ie/info/facilities-on-campus.shtml#bank">Bank</a></li>
+									<li><a href="http://www.dcu.ie/info/facilities-on-campus.shtml#creche">Creche</a></li>
+									<li><a href="http://www.dcu.ie/info/facilities-on-campus.shtml#hairdresser">Hairdresser</a></li>
+									<li><a href="https://www.pharmhealth.com/">Pharmacy</a></li>
+									<li><a href="https://www.dcu.ie/info/copying.shtml">Print Shop</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -395,46 +480,46 @@ ul.rig.columns-4 li {
 
 
 
-					<li><a href="https://www.dcu.ie/">Faculties & Schools</a>
+					<li><a href="#">Faculties & Schools</a>
 						<ul class="sub1">
-							<li><a href="https://www.dcu.ie/">Faculty of Humanities & Social Sciences</a>
+							<li><a href="#">Faculty of Humanities & Social Sciences</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">School of Applied Language & Intercultural Studies</a></li>
-									<li><a href="https://www.dcu.ie/">School of Communications</a></li>
-									<li><a href="https://www.dcu.ie/">Fiontar & Scoil na Gaeilge</a></li>
-									<li><a href="https://www.dcu.ie/">School of Law & Government</a></li>
-									<li><a href="https://www.dcu.ie/">School of English</a></li>
-									<li><a href="https://www.dcu.ie/">School of History and Geography</a></li>
-									<li><a href="https://www.dcu.ie/">School of Theology, Philosophy, and Music</a></li>
+									<li><a href="https://www.dcu.ie/salis/index.shtml">School of Applied Language & Intercultural Studies</a></li>
+									<li><a href="https://www.dcu.ie/communications/index.shtml">School of Communications</a></li>
+									<li><a href="https://www.dcu.ie/fiontar_scoilnagaeilge/gaeilge/index.shtml">Fiontar & Scoil na Gaeilge</a></li>
+									<li><a href="https://www.dcu.ie/law_and_government/index.shtml">School of Law & Government</a></li>
+									<li><a href="https://www.dcu.ie/english/index.shtml">School of English</a></li>
+									<li><a href="https://www.dcu.ie/history_geography/index.shtml">School of History and Geography</a></li>
+									<li><a href="https://www.dcu.ie/theology_philosophy_music/index.shtml">School of Theology, Philosophy, and Music</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">DCU Institute of Education</a>
+							<li><a href="#">DCU Institute of Education</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">School of Arts Education & Movement</a></li>
-									<li><a href="https://www.dcu.ie/">School of Human Development</a></li>
-									<li><a href="https://www.dcu.ie/">School of Inclusive & Special Education</a></li>
-									<li><a href="https://www.dcu.ie/">School of Language, Literacy & Early Childhood Education</a></li>
-									<li><a href="https://www.dcu.ie/">School of Policy & Practice</a></li>
-									<li><a href="https://www.dcu.ie/">School of STEM Education, Innovation & Global Studies</a></li>
+									<li><a href="https://www.dcu.ie/arts_education_movement/index.shtml">School of Arts Education & Movement</a></li>
+									<li><a href="https://www.dcu.ie/human_development/index.shtml">School of Human Development</a></li>
+									<li><a href="https://www.dcu.ie/inclusive_and_special_education/index.shtml">School of Inclusive & Special Education</a></li>
+									<li><a href="https://www.dcu.ie/language_literacy_and_early_childhood_education/index.shtml">School of Language, Literacy & Early Childhood Education</a></li>
+									<li><a href="https://www.dcu.ie/policy_and_practice/index.shtml">School of Policy & Practice</a></li>
+									<li><a href="https://www.dcu.ie/stem_education_innovation_global_studies/index.shtml">School of STEM Education, Innovation & Global Studies</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Faculty of Science & Health</a>
+							<li><a href="#">Faculty of Science & Health</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">School of Biotechnology</a></li>
-									<li><a href="https://www.dcu.ie/">School of Chemical Sciences</a></li>
-									<li><a href="https://www.dcu.ie/">School of Health & Human Performance</a></li>
-									<li><a href="https://www.dcu.ie/">School of Mathematical Sciences</a></li>
-									<li><a href="https://www.dcu.ie/">School of Nursing & Human Sciences</a></li>
-									<li><a href="https://www.dcu.ie/">School of Physical Sciences</a></li>
+									<li><a href="https://www.dcu.ie/biotechnology/index.shtml">School of Biotechnology</a></li>
+									<li><a href="https://www.dcu.ie/chemistry/index.shtml">School of Chemical Sciences</a></li>
+									<li><a href="https://www.dcu.ie/shhp/index.shtml">School of Health & Human Performance</a></li>
+									<li><a href="https://www.dcu.ie/maths/index.shtml">School of Mathematical Sciences</a></li>
+									<li><a href="https://www.dcu.ie/snhs/index.shtml">School of Nursing & Human Sciences</a></li>
+									<li><a href="https://www.dcu.ie/physics/index.shtml">School of Physical Sciences</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Faculty of Engineering & Computing</a>
+							<li><a href="#">Faculty of Engineering & Computing</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">School of Computing</a></li>
-									<li><a href="https://www.dcu.ie/">School of Electronic Engineering</a></li>
-									<li><a href="https://www.dcu.ie/">School of Mechanical and Manufacturing Engineering</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Business School</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Connected - Online Education</a></li>
+									<li><a href="https://www.dcu.ie/computing/index.shtml">School of Computing</a></li>
+									<li><a href="https://www.dcu.ie/electronics/index.shtml">School of Electronic Engineering</a></li>
+									<li><a href="https://www.dcu.ie/mechanical_engineering/index.shtml">School of Mechanical and Manufacturing Engineering</a></li>
+									<li><a href="http://business.dcu.ie/">DCU Business School</a></li>
+									<li><a href="https://www.dcu.ie/connected/index.shtml">DCU Connected - Online Education</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -442,112 +527,112 @@ ul.rig.columns-4 li {
 
 
 
-					<li><a href="https://www.dcu.ie/">Study at Dcu</a>
+					<li><a href="#">Study at Dcu</a>
 						<ul class="sub1">
-							<li><a href="https://www.dcu.ie/">Prospective Students</a>
+							<li><a href="#">Prospective Students</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Undergraduate</a></li>
-									<li><a href="https://www.dcu.ie/">Postgraduate</a></li>
-									<li><a href="https://www.dcu.ie/">Undergraduate Programmes</a></li>
-									<li><a href="https://www.dcu.ie/">Prospective Students</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Connected - Online Education</a></li>
-									<li><a href="https://www.dcu.ie/">General Admissions</a></li>
-									<li><a href="https://www.dcu.ie/">Access Programmes</a></li>
-									<li><a href="https://www.dcu.ie/">Graduate Studies Office</a></li>
-									<li><a href="https://www.dcu.ie/">International Students</a></li>
-									<li><a href="https://www.dcu.ie/">Student Scholarships</a></li>
-									<li><a href="https://www.dcu.ie/">Mature Students</a></li>
+									<li><a href="http://www4.dcu.ie/courses/index.shtml?del=undergraduate">Undergraduate</a></li>
+									<li><a href="http://www4.dcu.ie/courses/index.shtml?del=postgraduate">Postgraduate</a></li>
+									<li><a href="https://www.dcu.ie/studentrecruitment/undergraduate-listing.shtml">Undergraduate Programmes</a></li>
+									<li><a href="https://www.dcu.ie/studentrecruitment/index.shtml">Prospective Students</a></li>
+									<li><a href="https://www.dcu.ie/connected/index.shtml">DCU Connected - Online Education</a></li>
+									<li><a href="https://www.dcu.ie/registry/admissions.shtml">General Admissions</a></li>
+									<li><a href="https://www.dcu.ie/access/index.shtml">Access Programmes</a></li>
+									<li><a href="https://www.dcu.ie/graduatestudies/index.shtml">Graduate Studies Office</a></li>
+									<li><a href="https://www.dcu.ie/international/index.shtml">International Students</a></li>
+									<li><a href="http://www4.dcu.ie/prospective/scholarships.shtml">Student Scholarships</a></li>
+									<li><a href="https://www.dcu.ie/students/mature/index.shtml">Mature Students</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Current Students</a>
+							<li><a href="#">Current Students</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Registration</a></li>
-									<li><a href="https://www.dcu.ie/">Orientation</a></li>
-									<li><a href="https://www.dcu.ie/">Examinations</a></li>
-									<li><a href="https://www.dcu.ie/">Examination Results</a></li>
-									<li><a href="https://www.dcu.ie/">Examination Appeals</a></li>
-									<li><a href="https://www.dcu.ie/">Fees Information</a></li>
-									<li><a href="https://www.dcu.ie/">Past Exam Papers</a></li>
-									<li><a href="https://www.dcu.ie/">Graduation</a></li>
-									<li><a href="https://www.dcu.ie/">Academic Calendar</a></li>
-									<li><a href="https://www.dcu.ie/">Loop</a></li>
-									<li><a href="https://www.dcu.ie/">Portal</a></li>
-									<li><a href="https://www.dcu.ie/">Student Email</a></li>
-									<li><a href="https://www.dcu.ie/">Print Shop</a></li>
-									<li><a href="https://www.dcu.ie/">Wi-Fi</a></li>
-									<li><a href="https://www.dcu.ie/">Metis</a></li>
+									<li><a href="https://www.dcu.ie/registry/registration.shtml">Registration</a></li>
+									<li><a href="https://www.dcu.ie/students/orientation/index.shtml">Orientation</a></li>
+									<li><a href="https://www.dcu.ie/registry/examinations/overview.shtml">Examinations</a></li>
+									<li><a href="https://www.dcu.ie/registry/examinations/results.shtml">Examination Results</a></li>
+									<li><a href="https://www.dcu.ie/ovpaa/examination-appeals.shtml">Examination Appeals</a></li>
+									<li><a href="https://www.dcu.ie/fees/noticeboard-fees.shtml">Fees Information</a></li>
+									<li><a href="https://www.dcu.ie/registry/past-exam-papers.shtml">Past Exam Papers</a></li>
+									<li><a href="https://www.dcu.ie/registry/graduation/overview.shtml">Graduation</a></li>
+									<li><a href="http://dcu.ie/node/96986">Academic Calendar</a></li>
+									<li><a href="https://loop.dcu.ie/theme/dcu/layout/altlogin.php">Loop</a></li>
+									<li><a href="https://www.dcu.ie/user/login?destination=/iss/portal-changes.shtml">Portal</a></li>
+									<li><a href="https://login.dcu.ie/idp/profile/SAML2/Redirect/SSO;jsessionid=E13CA28BA5C70E3F5B355ECD6259EFB6.idp2?execution=e1s1#">Student Email</a></li>
+									<li><a href="https://www.dcu.ie/info/copying.shtml">Print Shop</a></li>
+									<li><a href="https://www.dcu.ie/iss/networks/eduroam/wireless-network.shtml">Wi-Fi</a></li>
+									<li><a href="https://metis-brehm.dcu.ie/">Metis</a></li>
 								</ul>
 							</li>
-							<li><a href="">Student Support</a>
+							<li><a href="#">Student Support</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Access Office</a></li>
-									<li><a href="https://www.dcu.ie/">Careers Office</a></li>
-									<li><a href="https://www.dcu.ie/">Chaplaincy</a></li>
-									<li><a href="https://www.dcu.ie/">Counselling & Personal Development</a></li>
-									<li><a href="https://www.dcu.ie/">Disability & Learning Support Service</a></li>
-									<li><a href="https://www.dcu.ie/">Financial Assistance Service</a></li>
-									<li><a href="https://www.dcu.ie/">INTRA Internships</a></li>
-									<li><a href="https://www.dcu.ie/">Sports Development Service</a></li>
-									<li><a href="https://www.dcu.ie/">Student Advisory Service</a></li>
-									<li><a href="https://www.dcu.ie/">Student Health Centre</a></li>
-									<li><a href="https://www.dcu.ie/">Student Learning</a></li>
+									<li><a href="https://www.dcu.ie/access/index.shtml">Access Office</a></li>
+									<li><a href="https://www.dcu.ie/careers/index.shtml">Careers Office</a></li>
+									<li><a href="https://www.dcu.ie/chaplaincy/index.shtml">Chaplaincy</a></li>
+									<li><a href="https://www.dcu.ie/counselling/index.shtml">Counselling & Personal Development</a></li>
+									<li><a href="https://www.dcu.ie/disability/index.shtml">Disability & Learning Support Service</a></li>
+									<li><a href="https://www.dcu.ie/students/finance/index.shtml">Financial Assistance Service</a></li>
+									<li><a href="https://www.dcu.ie/intra/index.shtml">INTRA Internships</a></li>
+									<li><a href="https://www.dcu.ie/studentsport/index.shtml">Sports Development Service</a></li>
+									<li><a href="https://www.dcu.ie/advice/index.shtml">Student Advisory Service</a></li>
+									<li><a href="https://www.dcu.ie/health/index.shtml">Student Health Centre</a></li>
+									<li><a href="https://www.dcu.ie/studentlearning/index.shtml">Student Learning</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Student Life</a>
+							<li><a href="#">Student Life</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">DCU Students Union</a></li>
-									<li><a href="https://www.dcu.ie/">Clubs & Societies</a></li>
-									<li><a href="https://www.dcu.ie/">DCUfm</a></li>
-									<li><a href="https://www.dcu.ie/">The College View – Student Newspaper</a></li>
-									<li><a href="https://www.dcu.ie/">Student Life</a></li>
+									<li><a href="http://www.dcusu.ie/">DCU Students Union</a></li>
+									<li><a href="http://www.dcusu.ie/resources-page/">Clubs & Societies</a></li>
+									<li><a href="http://www.dcufm.com/">DCUfm</a></li>
+									<li><a href="https://www.thecollegeview.com/">The College View – Student Newspaper</a></li>
+									<li><a href="http://www4.dcu.ie/student-life/index.shtml">Student Life</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 
-					<li><a href="https://www.dcu.ie/">Research & Engagement</a>
+					<li><a href="#">Research & Engagement</a>
 						<ul class="sub1">
-							<li><a href="https://www.dcu.ie/">Research</a>
+							<li><a href="#">Research</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Research Information</a></li>
-									<li><a href="https://www.dcu.ie/">Centres & Institutes</a></li>
-									<li><a href="https://www.dcu.ie/">Research By Faculty & School</a></li>
-									<li><a href="https://www.dcu.ie/">Research Support</a></li>
-									<li><a href="https://www.dcu.ie/">Graduate Research</a></li>
+									<li><a href="https://www.dcu.ie/research/index.shtml">Research Information</a></li>
+									<li><a href="https://www.dcu.ie/research/institutes.shtml">Centres & Institutes</a></li>
+									<li><a href="https://www.dcu.ie/research/faculties.shtml">Research By Faculty & School</a></li>
+									<li><a href="https://www.dcu.ie/researchsupport/index.shtml">Research Support</a></li>
+									<li><a href="https://www.dcu.ie/graduatestudies/postgrad-research.shtml">Graduate Research</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Partnerships</a>
+							<li><a href="#">Partnerships</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Accreditation Partnerships</a></li>
-									<li><a href="https://www.dcu.ie/">3U Partnership</a></li>
-									<li><a href="https://www.dcu.ie/">Dundalk Institute of Technology (DkIT)</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Alpha</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Ryan Academy</a></li>
-									<li><a href="https://www.dcu.ie/">Arizona State University (ASU)</a></li>
+									<li><a href="https://www.dcu.ie/info/partnerships.shtml">Accreditation Partnerships</a></li>
+									<li><a href="http://3u.ie/">3U Partnership</a></li>
+									<li><a href="https://www.dkit.ie/">Dundalk Institute of Technology (DkIT)</a></li>
+									<li><a href="http://www.dcualpha.ie/">DCU Alpha</a></li>
+									<li><a href="http://ryanacademy.ie/">DCU Ryan Academy</a></li>
+									<li><a href="https://dcu.asu.edu/">Arizona State University (ASU)</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Engagement & Outreach</a>
+							<li><a href="#">Engagement & Outreach</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Age Friendly University</a></li>
-									<li><a href="https://www.dcu.ie/">Alumni</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Educational Trust</a></li>
-									<li><a href="https://www.dcu.ie/">DCU in the Community</a></li>
-									<li><a href="https://www.dcu.ie/">Careers Office</a></li>
-									<li><a href="https://www.dcu.ie/">Centre for Talented Youth, Ireland (CTYI)</a></li>
-									<li><a href="https://www.dcu.ie/">INTRA Internships</a></li>
-									<li><a href="https://www.dcu.ie/">Technology Transfer (Invent DCU)</a></li>
-									<li><a href="https://www.dcu.ie/">TEDx DCU</a></li>
-									<li><a href="https://www.dcu.ie/">Volunteer</a></li>
-									<li><a href=https://www.dcu.ie/"">Teaching Enhancement Unit</a></li>
-									<li><a href=https://www.dcu.ie/"">National Institute for Digital Learning</a></li>
+									<li><a href="https://www.dcu.ie/agefriendly/index.shtml">Age Friendly University</a></li>
+									<li><a href="https://www.dcu.ie/alumni/index.shtml">Alumni</a></li>
+									<li><a href="https://shapingthefuture.dcu.ie/">DCU Educational Trust</a></li>
+									<li><a href="https://www.dcu.ie/community/index.shtml">DCU in the Community</a></li>
+									<li><a href="https://www.dcu.ie/careers/index.shtml/">Careers Office</a></li>
+									<li><a href="https://www.dcu.ie/ctyi/index.shtml">Centre for Talented Youth, Ireland (CTYI)</a></li>
+									<li><a href="https://www.dcu.ie/intra/index.shtml">INTRA Internships</a></li>
+									<li><a href="http://dcuinvent.ie/">Technology Transfer (Invent DCU)</a></li>
+									<li><a href="https://www.dcu.ie/tedxdcu/index.shtml">TEDx DCU</a></li>
+									<li><a href="https://www.dcu.ie/volunteer/index.shtml">Volunteer</a></li>
+									<li><a href="https://www.dcu.ie/teu/index.shtml">Teaching Enhancement Unit</a></li>
+									<li><a href="https://www.dcu.ie/nidl/index.shtml">National Institute for Digital Learning</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Media</a>
+							<li><a href="#">Media</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">News</a></li>
-									<li><a href="https://www.dcu.ie/">Find An Expert</a></li>
-									<li><a href="https://www.dcu.ie/">DCU In The Media</a></li>
-									<li><a href="https://www.dcu.ie/">Communications & Marketing</a></li>
+									<li><a href="https://www.dcu.ie/news/index.shtml">News</a></li>
+									<li><a href="https://www.dcu.ie/marketing/media/index.shtml">Find An Expert</a></li>
+									<li><a href="https://www.dcu.ie/marketing/in-the-media.shtml">DCU In The Media</a></li>
+									<li><a href="https://www.dcu.ie/marketing/index.shtml">Communications & Marketing</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -556,88 +641,88 @@ ul.rig.columns-4 li {
 
 
 
-					<li><a href="https://www.dcu.ie/">Offices & Departments</a>
+					<li><a href="#">Offices & Departments</a>
 						<ul class="sub1">
-							<li><a href="https://www.dcu.ie/">Governance</a>
+							<li><a href="#">Governance</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">President</a></li>
-									<li><a href="https://www.dcu.ie/">Chief Operations Officer</a></li>
-									<li><a href="https://www.dcu.ie/">Freedom of Information</a></li>
-									<li><a href="https://www.dcu.ie/">Oifig na Gaeilge</a></li>
-									<li><a href="https://www.dcu.ie/">Health & Safety</a></li>
-									<li><a href="https://www.dcu.ie/">Quality Promotion Office</a></li>
-									<li><a href="https://www.dcu.ie/">Equality</a></li>
+									<li><a href="https://www.dcu.ie/president/index.shtml">President</a></li>
+									<li><a href="https://www.dcu.ie/ocoo/index.shtml">Chief Operations Officer</a></li>
+									<li><a href="https://www.dcu.ie/foi/index.shtml">Freedom of Information</a></li>
+									<li><a href="https://www.dcu.ie/oifignagaeilge/ie/index.shtml">Oifig na Gaeilge</a></li>
+									<li><a href="https://www.dcu.ie/safety/index.shtml">Health & Safety</a></li>
+									<li><a href="https://www.dcu.ie/qpo/index.shtml">Quality Promotion Office</a></li>
+									<li><a href="https://www.dcu.ie/equality/index.shtml">Equality</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Academic</a>
+							<li><a href="#">Academic</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Vice President Academic Affairs</a></li>
-									<li><a href="https://www.dcu.ie/">Registry</a></li>
-									<li><a href="https://www.dcu.ie/">Graduate Studies</a></li>
-									<li><a href="https://www.dcu.ie/">Research at DCU</a></li>
-									<li><a href="https://www.dcu.ie/">Research Support</a></li>
-									<li><a href="https://www.dcu.ie/">Student Support & Development</a></li>
+									<li><a href="https://www.dcu.ie/ovpaa/index.shtml">Vice President Academic Affairs</a></li>
+									<li><a href="https://www.dcu.ie/registry/index.shtml">Registry</a></li>
+									<li><a href="https://www.dcu.ie/graduatestudies/index.shtml">Graduate Studies</a></li>
+									<li><a href="https://www.dcu.ie/research/index.shtml">Research at DCU</a></li>
+									<li><a href="https://www.dcu.ie/researchsupport/index.shtml">Research Support</a></li>
+									<li><a href="https://www.dcu.ie/students/index.shtml">Student Support & Development</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Professional Services</a>
+							<li><a href="#">Professional Services</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Estates</a></li>
-									<li><a href="https://www.dcu.ie/">Finance</a></li>
-									<li><a href="https://www.dcu.ie/">Information Systems Services</a></li>
-									<li><a href="https://www.dcu.ie/">Human Resources</a></li>
-									<li><a href="https://www.dcu.ie/">Communications & Marketing</a></li>
+									<li><a href="http://www.dcu.ie/estates/index.shtml">Estates</a></li>
+									<li><a href="https://www.dcu.ie/finance/index.shtml">Finance</a></li>
+									<li><a href="https://www.dcu.ie/iss/index.shtml">Information Systems Services</a></li>
+									<li><a href="https://www.dcu.ie/hr/index.shtml">Human Resources</a></li>
+									<li><a href="https://www.dcu.ie/marketing/index.shtml">Communications & Marketing</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Outreach</a>
+							<li><a href="#">Outreach</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Civic Engagement</a></li>
-									<li><a href="https://www.dcu.ie/">International Office</a></li>
-									<li><a href="https://www.dcu.ie/">Info & Services</a></li>
-									<li><a href="https://www.dcu.ie/">Alumni</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Educational Trust</a></li>
-									<li><a href="https://www.dcu.ie/">Student Recruitment</a></li>
+									<li><a href="https://www.dcu.ie/community/index.shtml">Civic Engagement</a></li>
+									<li><a href="https://www.dcu.ie/international/index.shtml">International Office</a></li>
+									<li><a href="http://www.dcu.ie/">Info & Services</a></li>
+									<li><a href="https://www.dcu.ie/alumni/index.shtml">Alumni</a></li>
+									<li><a href="https://shapingthefuture.dcu.ie/">DCU Educational Trust</a></li>
+									<li><a href="https://www.dcu.ie/studentrecruitment/index.shtml">Student Recruitment</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 
-					<li><a href="https://www.dcu.ie/">Prospectus & Quicklinks</a>
+					<li><a href="#">Prospectus & Quicklinks</a>
 						<ul class="sub1">
-							<li><a href="https://www.dcu.ie/">Programme Information</a>
+							<li><a href="#">Programme Information</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Undergraduate Prospectus</a></li>
-									<li><a href="https://www.dcu.ie/">Postgraduate Prospectus</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Connected - Online Education</a></li>
-									<li><a href="https://www.dcu.ie/">Student Recruitment Office</a></li>
+									<li><a href="http://www4.dcu.ie/courses/index.shtml?del=undergraduate">Undergraduate Prospectus</a></li>
+									<li><a href="https://www4.dcu.ie/courses/index.shtml?del=postgraduate">Postgraduate Prospectus</a></li>
+									<li><a href="https://www.dcu.ie/connected/index.shtml">DCU Connected - Online Education</a></li>
+									<li><a href="https://www.dcu.ie/studentrecruitment/index.shtml">Student Recruitment Office</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Quick Links for Students</a>
+							<li><a href="#">Quick Links for Students</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Library</a></li>
-									<li><a href="https://www.dcu.ie/">Student Support & Development</a></li>
-									<li><a href="https://www.dcu.ie/">Timetables</a></li>
-									<li><a href="https://www.dcu.ie/">Loop VLE</a></li>
+									<li><a href="https://www.dcu.ie/library/index.shtml">Library</a></li>
+									<li><a href="https://www.dcu.ie/students/index.shtml">Student Support & Development</a></li>
+									<li><a href="https://www.dcu.ie/registry/timetables.shtml">Timetables</a></li>
+									<li><a href="https://loop.dcu.ie/theme/dcu/layout/altlogin.php">Loop VLE</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Campus Services</a>
+							<li><a href="#">Campus Services</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">Campus Phonebook</a></li>
-									<li><a href="https://www.dcu.ie/">Accommodation</a></li>
-									<li><a href="https://www.dcu.ie/">Sports Facilities, Gym and Pool</a></li>
-									<li><a href="https://www.dcu.ie/">DCU Sports Academy</a></li>
-									<li><a href="https://www.dcu.ie/">IT at DCU</a></li>
-									<li><a href="https://www.dcu.ie/">Marketing, Communications and Media</a></li>
+									<li><a href="http://www4.dcu.ie/phonebook/index.shtml">Campus Phonebook</a></li>
+									<li><a href="http://www.dcuaccommodation.ie/">Accommodation</a></li>
+									<li><a href="https://www.dcu.ie/dcusport/index.shtml">Sports Facilities, Gym and Pool</a></li>
+									<li><a href="https://www.dcu.ie/sports-academy/index.shtml">DCU Sports Academy</a></li>
+									<li><a href="https://www.dcu.ie/iss/index.shtml">IT at DCU</a></li>
+									<li><a href="https://www.dcu.ie/marketing/index.shtml">Marketing, Communications and Media</a></li>
 								</ul>
 							</li>
-							<li><a href="https://www.dcu.ie/">Visitor Information</a>
+							<li><a href="#">Visitor Information</a>
 								<ul class="sub2">
-									<li><a href="https://www.dcu.ie/">About DCU</a></li>
-									<li><a href="https://www.dcu.ie/">Location & Directions</a></li>
-									<li><a href="https://www.dcu.ie/">Campus Maps</a></li>
-									<li><a href="https://www.dcu.ie/">Parking</a></li>
-									<li><a href="https://www.dcu.ie/">The Helix</a></li>
-									<li><a href="https://www.dcu.ie/">Safety & Security</a></li>
-									<li><a href="https://www.dcu.ie/">Restaurants</a></li>
+									<li><a href="https://www.dcu.ie/discovering-dcu.shtml">About DCU</a></li>
+									<li><a href="https://www.dcu.ie/info/get_to.shtml">Location & Directions</a></li>
+									<li><a href="https://www.dcu.ie/info/campus.shtml">Campus Maps</a></li>
+									<li><a href="https://www.dcu.ie/estates/parking.shtml">Parking</a></li>
+									<li><a href="http://thehelix.ie/">The Helix</a></li>
+									<li><a href="https://www.dcu.ie/safety/index.shtml">Safety & Security</a></li>
+									<li><a href="https://www.dcu.ie/catering/index.shtml">Restaurants</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -651,7 +736,7 @@ ul.rig.columns-4 li {
 
 <div class="jumbotron">
 	<div class="container">
-			<h1>Welcome to Park@DCU</h1>
+			<a href="http://moored39.pythonanywhere.com/park_at_dcu/"><h1>Welcome to Park@DCU</h1></a>
 
 	</div>
 </div>
@@ -668,12 +753,8 @@ ul.rig.columns-4 li {
             {% if error_msg %}
             {{ error_msg }}
             {% else %}
-
-
-
-
                 <table align="center">
-                    <tr>
+                    <tr class="data">
                         <th>Carpark</th>
                         <th>7AM</th>
                         <th>8AM</th>
@@ -692,11 +773,8 @@ ul.rig.columns-4 li {
                         <th>9PM</th>
                         <th>Spaces</th>
                         <th>Disabled Spaces</th>
-
-
                     </tr>
-
-                    <tr>
+                    <tr class="data">
                         <td>{{ carpark }}</td>
                         <td>{{ occupancy.am7 }}</td>
                         <td>{{ occupancy.am8 }}</td>
@@ -715,13 +793,10 @@ ul.rig.columns-4 li {
                         <td>{{ occupancy.pm21 }}</td>
                         <td>{{carparks.spaces}}</td>
                         <td>{{carparks.disabled_spaces}}</td>
-
-
                     </tr>
                 </table>
         <div class="buffer">
         </div>
-
         {% endif %}
         <div class="buffer">
         </div>
@@ -763,7 +838,7 @@ ul.rig.columns-4 li {
 Disabled Parking:<select name="type">
      <option value="no">No</option>
      <option value="yes">Yes</option>
-</select>
+</select><br><br>
 
 				<input class="button" type="submit" value = "Enter">
 		</form>
@@ -787,7 +862,7 @@ Disabled Parking:<select name="type">
 				<option value="gardens">gardens</option>
 				<option value="business">business</option>
 				<option value="1838">1838</option>
-			</select>
+			</select><br><br><br><br>
 			<input class="button" type="submit" value = "Enter">
 		</form>
 
@@ -842,13 +917,64 @@ Disabled Parking:<select name="type">
                     <option value="20">8 PM</option>
                     <option value="21">9 PM</option>
 
-                  </select>
+                  </select><br><br><br><br>
 
 					<input class="button" type="submit" value = "Go">
 			</form>
 
 	</li></ul></div>
+	<ul class="foot columns-3">
+		<li>
+			<table>
+				<tr>
+					<td>
+						<a href="#">Student Email</a>
+					</td>
+					<td>
+						<a href="#">Student Apps</a>
+					</td>
+					<td>
+						<a href="#">Loop</a>
+					</td>
+					<td>
+						<a href="#">Privacy</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="#">Staff Email</a>
+					</td>
+					<td>
+						<a href="#">Staff Apps</a>
+					</td>
+					<td>
+						<a href="#">Disclaimer</a>
+					</td>
+					<td>
+						<a href="#">Contact Us</a>
+					</td>
+				</tr>
+			</table></p>
+		</li>
 
+			<li>
+				<p class="centered">
+					<div class="social-networks">
+						<a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+						<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="#" class="youtube"><i class="fa fa-youtube-play"></i></a>
+						<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+					</div>
+				</p>
+			</li>
+			<li>
+				<p class="right">
+					<a href="http://thehelix.ie/" class="helix"><img src="http://www.dcu.ie/sites/all/themes/dcu_responsive/images/the-helix.png"/></a>
+					<a href="http://www.esf.ie/en/" class="esf1"><img src="http://www.dcu.ie/sites/all/themes/dcu_responsive/images/Irelands-EU-S-IFP-2014-2020.jpg"/></a>
+					<a href="http://www.esf.ie/en/" class="esf2"><img src="http://www.dcu.ie/sites/all/themes/dcu_responsive/images/eu_image.jpg"/></a>
+				</p>
+			</li>
+		</ul>
 
 <script>
 var myIndex = 0;
@@ -927,3 +1053,4 @@ function carousel4() {
 
  </body>
 </html>
+
