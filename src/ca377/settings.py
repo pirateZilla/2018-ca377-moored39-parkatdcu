@@ -121,4 +121,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "/2018-ca377-moored39-parkatdcu/src/park_at_dcu/static"
+STATIC_ROOT = "home/moored39/src/park_at_dcu/static"

@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 
 <!doctype html>
 <html lang="en">
@@ -11,14 +11,315 @@
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="{% static 'main.css' %}">
+	<!--<link rel="stylesheet" href="{% static 'main.css' %}">-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Park@DCU</title>
+<style>
+
+
+/* rules for navigation menu*/
+
+body {
+	background-color:#ffffff;
+
+}
+
+ul#navmenu, ul.sub1, ul.sub2 {
+	list-style-type:none;
+	font-size:8pt;
+	/*outline: 1px solid red;*/
+}
+
+ul#navmenu li {
+	/*outline:1px solid red;*/
+	width:150px;
+	text-align:center;
+	position:relative;
+	float:left;
+}
+
+ul#navmenu a {
+	text-decoration: none;
+	display: block;
+	width:150px;
+	heigh:25px;
+	line-height:25px;
+	color:#125E9D;
+	border:1px solid #ffffff;
+
+}
+
+ul#navmenu .sub1 li {
+	/*border:1px solid green;*/
+
+}
+
+ul#navmenu .sub1 a {
+	margin-top:0px;
+	width: 100px;
+
+}
+
+ul#navmenu .sub2 a {
+	margin-left: 0px;
+	border:1px solid #ffffff;
+
+}/*This determines how far moved to the left the sub2 items are compared to the rest */
+
+ul#navmenu li:hover > a {
+	background-color: #f1ede6
+} /*This determines the change that happens when you hover your mouse over a sub menu title li */
+
+ul#navmenu li:hover a:hover {
+
+	background-color: #f1ede6;
+}
+
+ul#navmenu ul.sub1 {
+	display:none;
+	position:absolute;
+	top:26px;
+	left:0px;
+}
+
+ul#navmenu ul.sub2 {
+	display: none;
+	position: absolute;
+	top:0px;
+	left:121px;
+}
+ul#navmenu li:hover .sub1 {
+	display:block;
+	background-color: #FFFFFF;
+	/*background-color:#C5D1EB;*/
+}
+
+ul#navmenu .sub1 li:hover .sub2 {
+	display:block;
+	background-color: #FFFFFF;
+	/*background-color:#C5D1EB;*/
+}
+
+
+
+
+.jumbotron {
+	background-image:url("https://i.imgur.com/dDYtaRj.jpg");
+	background-color:#FFFFFF;
+	background-size: cover;
+    background-repeat: no-repeat;
+	width:100%;
+	margin-bottom:20px;
+	height:480px;
+	margin-left:0px;
+	margin-right:0px;
+	text-align:right;
+
+}
+
+.jumbotron a {
+	font-family:Helvetica;
+	color:#FFFFFF !important;
+	font-style:
+}
+
+.jumbotron h1 {
+	font-family:Helvetica;
+	color:#FFFFFF !important;
+	font-style:
+}
+
+
+/*Navbar ends now*/
+
+
+.container-fluid {
+	background-color:#FFFFFF;
+
+}
+
+.navbar-default {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+
+
+.nav a {
+  color:#125E9D;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 14px 10px;
+  text-transform: uppercase;
+
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav img {
+	margin:0;
+}
+
+
+.container {
+	margin-top:100px;
+}
+
+ul.rig {
+	list-style: none;
+	font-size: 0px;
+	margin-left: -2.5%; /* should match li left margin */
+}
+ul.rig li {
+	font-family:Helvetica;
+	display: inline-block;
+	padding: 10px;
+	margin: 0 0 2.5% 2.5%;
+	background: #FFFFFF;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	font-size: 1rem;
+	vertical-align: top;
+	box-shadow: 0 0 5px #ddd;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+ul.rig li img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 0 10px;
+}
+ul.rig li h2 {
+	color:#125E9D;
+	margin: 0 0 5px;
+	font-family:Helvetica;
+}
+ul.rig li p {
+	font-size: .9em;
+	line-height: 1.5em;
+	color: #976F61;
+}
+ul.rig li a {
+	text-decoration:none;
+}
+
+/* class for 2 columns */
+ul.rig.columns-2 li {
+	width: 47.5%; /* this value + 2.5 should = 50% */
+}
+/* class for 3 columns */
+ul.rig.columns-3 li {
+	width: 30.83%; /* this value + 2.5 should = 33% */
+}
+/* class for 4 columns */
+ul.rig.columns-4 li {
+	width: 22.5%; /* this value + 2.5 should = 25% */
+}
+
+@media (max-width: 480px) {
+	ul.grid-nav li {
+		display: block;
+		margin: 0 0 5px;
+	}
+	ul.grid-nav li a {
+		display: block;
+	}
+	ul.rig {
+		margin-left: 0;
+	}
+	ul.rig li {
+		width: 100% !important; /* over-ride all li styles */
+		margin: 0 0 20px;
+	}
+}
+
+.main {
+	background-color:#f1ede6;
+
+}
+
+.main h1 {
+	color:#259abb;
+	text-align:center;
+
+}
+
+
+
+.car {
+	display:none;
+
+}
+
+.time {
+	display:none;
+
+}
+
+.campus {
+	display:none;
+
+}
+
+.fac {
+	display:none;
+
+}
+
+.button {
+
+  background-color: #f1ede6;
+  color:#259abb;
+  /*background-image: -webkit-linear-gradient(top, #e22882, #259abb);
+  background-image: -moz-linear-gradient(top, #e22882, #259abb);
+  background-image: -ms-linear-gradient(top, #e22882, #259abb);
+  background-image: -o-linear-gradient(top, #e22882, #259abb);
+  background-image: linear-gradient(to bottom, #e22882, #259abb);
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: dotted #ffffff 2px;*/
+  text-decoration: none;
+  border:none;
+  margin:4px 2px;
+  width:100%;
+  height:40px;
+}
+
+.button:hover {
+  background-color: #259abb;
+  color:#ffffff;
+  /*background-image: -webkit-linear-gradient(top, #259abb, #e22882);
+  background-image: -moz-linear-gradient(top, #259abb, #e22882);
+  background-image: -ms-linear-gradient(top, #259abb, #e22882);
+  background-image: -o-linear-gradient(top, #259abb, #e22882);
+  background-image: linear-gradient(to bottom, #259abb, #e22882);*/
+  text-decoration: none;
+  border:none;
+  margin:4px 2px;
+  width:100%;
+  height:40px;
+}
+
+
+</style>
+
+
+
+
 
 
  </head>
  <body>
-  
+
 
 
 
@@ -28,6 +329,7 @@
 
 	<ul id="navmenu">
 		<div class="container-fluid">
+
 
 					<li><img src="https://www4.dcu.ie/sites/default/files/dcu_logo_2colh100.jpg"></img></li>
 
@@ -80,7 +382,7 @@
 							</li>
 						</ul>
 					</li>
-					
+
 
 
 					<li><a href="https://www.dcu.ie/">Faculties & Schools</a>
@@ -126,7 +428,7 @@
 								</ul>
 							</li>
 						</ul>
-					</li>	
+					</li>
 
 
 
@@ -239,11 +541,11 @@
 								</ul>
 							</li>
 						</ul>
-					</li>					
-										
-	
-									
-					
+					</li>
+
+
+
+
 					<li><a href="https://www.dcu.ie/">Offices & Departments</a>
 						<ul class="sub1">
 							<li><a href="https://www.dcu.ie/">Governance</a>
@@ -288,7 +590,7 @@
 							</li>
 						</ul>
 					</li>
-					
+
 					<li><a href="https://www.dcu.ie/">Prospectus & Quicklinks</a>
 						<ul class="sub1">
 							<li><a href="https://www.dcu.ie/">Programme Information</a>
@@ -337,9 +639,9 @@
 
 
 
-<div class="jumbotron">					
+<div class="jumbotron">
 	<div class="container">
-			<h1>Welcome to Park@DCU</h1>
+			<a href="http://moored39.pythonanywhere.com/park_at_dcu/"><h1>Welcome to Park@DCU</h1></a>
 
 	</div>
 </div>
@@ -348,9 +650,9 @@
 <h1>Car Parking at DCU</h1>
 <ul class="rig columns-4">
 	<li>
-		<img class="campus w3-animate-fading" src="{% static 'campus1.jpg' %}"/>
-		<img class="campus w3-animate-fading" src="{% static 'campus2.jpg' %}"/>
-		<img class="campus w3-animate-fading" src="{% static 'campus3.jpg' %}"/>
+		<img class="campus w3-animate-fading" src="https://i.imgur.com/o4rcvmB.jpg"/>
+		<img class="campus w3-animate-fading" src="https://i.imgur.com/HYzH02i.jpg"/>
+		<img class="campus w3-animate-fading" src="https://i.imgur.com/PkOYhTV.jpg"/>
 		<h2>Search by Car Park</h2>
 		<form action="{% url 'park_at_dcu:webservice'  %}" method="get">
 			Select Carpark:  <select name="carpark">
@@ -359,18 +661,24 @@
    				<option value="Creche">Creche</option>
    				<option value="Invent">Invent</option>
   				<option value="DCU Alpha">DCU Alpha CP</option>
-   				<option value="Library">Library</option>  
-  				<option value="All Hallows">All Hallows</option>  
+   				<option value="Library">Library</option>
+  				<option value="All Hallows">All Hallows</option>
 				</select>
+				 <br><br>
+Disabled Parking:<select name="type">
+     <option value="no">No</option>
+     <option value="yes">Yes</option>
+</select>
+
 				<input class="button" type="submit" value = "Enter">
 		</form>
 
 	</li>
-	
+
 	<li>
-		<img class="fac w3-animate-fading" src="{% static 'fac1.jpg' %}"/>
-		<img class="fac w3-animate-fading" src="{% static 'fac2.jpg' %}"/>
-		<img class="fac w3-animate-fading" src="{% static 'fac3.jpg' %}"/>
+		<img class="fac w3-animate-fading" src="https://i.imgur.com/XsXyC2p.jpg"/>
+		<img class="fac w3-animate-fading" src="https://i.imgur.com/hAnFQPt.jpg"/>
+		<img class="fac w3-animate-fading" src="https://i.imgur.com/95QN2bb.jpg"/>
 		<h2>Search By Facility</h2>
 		<form action="{% url 'park_at_dcu:facility'  %}" method="get">
 			Select Facility:  <select name="facility">
@@ -379,21 +687,21 @@
 				<option value="library">Library</option>
 				<option value="Invent">Invent</option>
 				<option value="main reception">main reception</option>
-				<option value="residence">residence</option>  
-				<option value="sport centre">sport centre</option>  
-				<option value="gardens">gardens</option>  
-				<option value="business">business</option> 
-				<option value="1838">1838</option>  
+				<option value="residence">residence</option>
+				<option value="sport centre">sport centre</option>
+				<option value="gardens">gardens</option>
+				<option value="business">business</option>
+				<option value="1838">1838</option>
 			</select>
 			<input class="button" type="submit" value = "Enter">
 		</form>
 
 	</li>
-	
+
 	<li>
-		<img class="car w3-animate-fading" src="{% static 'car1.jpg' %}"/>
-		<img class="car w3-animate-fading" src="{% static 'car2.jpg' %}"/>
-		<img class="car w3-animate-fading" src="{% static 'car3.jpg' %}"/>
+		<img class="car w3-animate-fading" src="https://i.imgur.com/OyHjS7u.jpg"/>
+		<img class="car w3-animate-fading" src="https://i.imgur.com/tb2NdYj.jpg"/>
+		<img class="car w3-animate-fading" src="https://i.imgur.com/pi5zoiv.jpg"/>
 		<h2>Real Time Occupancy</h2>
 		<form action="{% url 'park_at_dcu:occupancy'  %}" method="get">
 			Select Carpark:  <select name="carpark">
@@ -402,28 +710,51 @@
 				<option value="Invent (CP3)">Invent</option>
 				<option value="Invent">Invent</option>
 				<option value="Library (CP4)">Library</option>
-				<option value="St Pats CP">St Pats</option>  
-				<option value="DCU Alpha CP">DCU Alpha</option>  
-				<option value="All Hallows CP">All Hallows</option>  
-			</select>
+				<option value="St Pats CP">St Pats</option>
+				<option value="DCU Alpha CP">DCU Alpha</option>
+				<option value="All Hallows CP">All Hallows</option>
+			</select><br><br>
+			Enter a date
+            <input type="date" name="week" min= "2017-01-01"max="2018-12-30" required>
 			<input class="button" type="submit" value = "Enter">
+
+
+
   		</form>
 
 	</li>
-	
+
 	<li>
-		<img class="time w3-animate-fading" src="{% static 'time1.jpg' %}"/>
-		<img class="time w3-animate-fading" src="{% static 'time2.jpg' %}"/>
-		<img class="time w3-animate-fading" src="{% static 'time3.jpg' %}"/>
+		<img class="time w3-animate-fading" src="https://i.imgur.com/T0bwEfL.jpg"/>
+		<img class="time w3-animate-fading" src="https://i.imgur.com/NhFFBTz.jpg"/>
+		<img class="time w3-animate-fading" src="https://i.imgur.com/d3BXNc7.jpg"/>
 		<h2>Search By Time</h2>
 			<form action="{% url 'park_at_dcu:carpark_for_time'  %}" method="get">
-				Time: <input type="text" name="time">
+
+				Time:  <select name="time">
+                    <option value="8">8 AM</option>
+                    <option value="9">9 AM</option>
+                    <option value="10">10 AM</option>
+                    <option value="11">11 AM</option>
+                    <option value="12">12 PM</option>
+                    <option value="13">1 PM</option>
+                    <option value="14">2 PM</option>
+                    <option value="15">3 PM</option>
+                    <option value="16">4 PM</option>
+                    <option value="17">5 PM</option>
+                    <option value="18">6 PM</option>
+                    <option value="19">7 PM</option>
+                    <option value="20">8 PM</option>
+                    <option value="21">9 PM</option>
+
+                  </select>
+
 					<input class="button" type="submit" value = "Go">
 			</form>
 
-	</li>
-	
-	
+	</li></ul></div>
+
+
 <script>
 var myIndex = 0;
 carousel1();
@@ -432,12 +763,12 @@ function carousel1() {
     var i;
     var x = document.getElementsByClassName("campus");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+       x[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel1, 8500);    
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel1, 8500);
 }
 
 
@@ -449,12 +780,12 @@ function carousel2() {
     var i;
     var x = document.getElementsByClassName("fac");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+       x[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel2, 9000);    
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel2, 9000);
 }
 
 var myIndex = 0;
@@ -464,12 +795,12 @@ function carousel3() {
     var i;
     var x = document.getElementsByClassName("car");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+       x[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel3, 9500);    
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel3, 9500);
 }
 
 var myIndex = 0;
@@ -479,19 +810,19 @@ function carousel4() {
     var i;
     var x = document.getElementsByClassName("time");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+       x[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel4, 8000);    
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel4, 8000);
 }
 
 </script>
-					
-					
-					
-					
+
+
+
+
 
 
 
