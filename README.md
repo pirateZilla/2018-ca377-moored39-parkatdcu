@@ -1,14 +1,3 @@
-# Park@DCU
-
-Each of the major DCU campuses has a limited number of available car parking spaces. An annual challenge is the lack of parking availability at busy times of semester which is increasing now we are a multi-campus university. You are tasked with building an online system to identify the best locations and currently available parking spaces across three DCU campuses - Glasnevin, St Patricks and DCU alpha.
-
-## Getting Started
-
-Please see the [briefing notes](https://gitlab.computing.dcu.ie/slittle/2018-ca377-master-parkatdcu/blob/master/client_notes/BriefingDocument.pdf) and the [wiki](https://gitlab.computing.dcu.ie/slittle/2018-ca377-master-parkatdcu/wikis/home#ca377-programming-fundamentals-project-ec3-20172018) for information about CA377 and the assignments.
-
-For an introduction to using GIT, please see Stephen Blott's [notes](https://gitlab.computing.dcu.ie/sblott/local-gitlab-documentation).
-
-## Acknowledgments
-
-* Jennifer Foster, jennifer.foster@dcu.ie
-* Suzanne Little: suzanne.little@dcu.ie
+# PARK@DCU
+#### by Declan Moore
+Please find the application at [GitLab](https://gitlab.computing.dcu.ie/moored39/2018-ca377-moored39-parkatdcu) or [PythonAnywhere](http://moored39.pythonanywhere.com/park_at_dcu/)
