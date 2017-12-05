@@ -15,12 +15,12 @@ Our hope is that these functionalities will result in parking at DCU being an ea
 1. From the 'Project' page for the app on Gitlab click 'Fork' to create your own fork of the project. 
 2. Rename your new fork of the project to something like `2018-ca377-<yourusername>-park-at-dcu`
 3. Open the terminal in Linux. Clone the repository using the following commands:
-    ```bash
+    ```
     $ git clone https://gitlab.computing.dcu.ie/<yourusername>/2018-ca377-<yourusername>-parkatdcu
     $ cd 2018-ca377-<yourusername>-parkatdcu
     ```
 4. Now the app is locally installed on your machine. Next, assuming you have both Python3 and Django installed on your Linux machine, type the following commands:
-    ```bash
+    ```
     $ cd src
     $ python3 manage.py runserver
     ```
@@ -30,18 +30,18 @@ Our hope is that these functionalities will result in parking at DCU being an ea
 ## How to deploy the app to PythonAnywhere
 1. Go to pythonanywhere.com and create an account (i.e. <yourusername>)
 2. Open you settings file at `2018-ca377-<yourusername>-parkatdcu/src/ca377/settings.py` and add you PythonAnywhere URL to the list of `ALLOWED_HOSTS`.
-    ```python
+    ```
     ALLOWED_HOSTS = ['127.0.0.1', '<yourusername>.pythonanywhere.com']
     ```
 3. Open `2018-ca377-<yourusername>-parkatdcu` in your local file explorer and write click your `src` folder and compress it to a `tar.gz` file.
 4. Open the Files tab on your PythonAnywhere account and upload to `tar.gz` file.
 5. Open the Consoles tab on PythonAnywhere and create a bash console. 
 6. In your bash console extract your newly uploaded compressed src file.
-    ```bash
+    ```
     $ tar zxvf src.tar.gz
     ```
 7. Make a virtualenv and install Django and required libraries onto it.
-    ```bash
+    ```
     $ mkvirtual --python=/usr/bin/python3.4 mysite-virtualenv
     (mysite-virtualenv) $ pip install django
     (mysite-virtualenv) $ pip install requests
@@ -50,7 +50,7 @@ Our hope is that these functionalities will result in parking at DCU being an ea
 9. Select 'Manual configuration'.
 10. On the Web tab fill in your values for 'Source Code' (i.e. `/home/<yourusername>/.virtualenvs/mysite-virtualenv/bin/python3.4`), 'Working Directory' (i.e. `/home/<yourusername>`), and 'Virtualenv' (i.e. `/home/<yourusername>/.virtualenvs/mysite-virtualenv`)
 11. Open your WSGI file (i.e. `/var/www/<yourusername>_pythonanywhere_com_wsgi.py`) and edit it to include just the Django code. It should look similar to this:
-    ```python
+    ```
     import os
     import sys
     path = '/home/moored39/src'
@@ -61,7 +61,7 @@ Our hope is that these functionalities will result in parking at DCU being an ea
     application = get_wsgi_application()
     ```
 12. Open your bash console and set up your database.
-    ```bash
+    ```
     (mysite-virtualenv) $ ./manage.py migrate
     ```
 13. Open the Web tab and click 'Reload <yourusername>.pythonanywhere.com'
@@ -72,18 +72,18 @@ The test cases are written in Python and located in '2018-ca377-<yourusername>-p
 
 #### Locally
 1. Using the terminal navigate to your project directory.
-    ```bash
+    ```
     $ cd 2018-ca377-<yourusername>-parkatdcu
     ```
 2. Run your test cases using the project's `manage.py` utility
-    ```bash
+    ```
     $ ./manage.py test
     ```
 3. Passes, failures are errors of your unit test cases will then be presented within the terminal.
 
 #### Gitlab
 1. In your terminal, commit your most recent version of the project to your GitLab repository.
-    ```bash
+    ```
     $ git add .
     $ git commit -m "<insert concise commit message here>"
     $ git push -u origin master
