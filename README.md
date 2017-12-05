@@ -66,11 +66,36 @@ Our hope is that these functionalities will result in parking at DCU being an ea
     ```
 13. Open the Web tab and click 'Reload <yourusername>.pythonanywhere.com'
 14. Open the deployment URL to confirm it is correctly deployed (i.e. '<yourusername>.pythonanywhere.com/park_at_dcu')
-    
-    
-    
-    
-    
+
+## Running Test Cases
+The test cases are written in Python and located in '2018-ca377-<yourusername>-parkatdcu'. They can be run locally, from the GitLab repository, or within your PythonAnywhere deployment.
+
+#### Locally
+1. Using the terminal navigate to your project directory.
+    ```bash
+    $ cd 2018-ca377-<yourusername>-parkatdcu
+    ```
+2. Run your test cases using the project's `manage.py` utility
+    ```bash
+    $ ./manage.py test
+    ```
+3. Passes, failures are errors of your unit test cases will then be presented within the terminal.
+
+#### Gitlab
+1. In your terminal, commit your most recent version of the project to your GitLab repository.
+    ```bash
+    $ git add .
+    $ git commit -m "<insert concise commit message here>"
+    $ git push -u origin master
+    ```
+2. Once the version has been pushed to GitLab, open the GitLab Repository in your browser.
+3. Navigate to the 'Pipelines' tab.
+4. All commits will be visible here with a status of 'passed' or 'failed'. In the 'Stages' column of each commit if you hover over that icon you can see each test case status. Clicking these will open the log information from the test cases indicating any passes, failures or errors from the unit test.
+
+#### PythonAnywhere
+1. Similarly to running the unittests locally, on PythonAnywhere you can run `./manage.py test` from your Bash Console.
+2. The output of these tests is then printed in the console showing the passes, failures, and errors of the unit tests.
+3. From the Web tab on PythonAnywhere under the 'Log files' section the 'Error log' can be accessed to view the outputs of unit tests.
     
     
     
