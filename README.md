@@ -91,6 +91,7 @@ The test cases are written in Python and located in '2018-ca377-<yourusername>-p
 2. Once the version has been pushed to GitLab, open the GitLab Repository in your browser.
 3. Navigate to the 'Pipelines' tab.
 4. All commits will be visible here with a status of 'passed' or 'failed'. In the 'Stages' column of each commit if you hover over that icon you can see each test case status. Clicking these will open the log information from the test cases indicating any passes, failures or errors from the unit test.
+5. For GitLab, the file `.gitlab-ci.yml` invokes the tests to begin on commits being pushed to the repository. 
 
 #### PythonAnywhere
 1. Similarly to running the unittests locally, on PythonAnywhere you can run `./manage.py test` from your Bash Console.
