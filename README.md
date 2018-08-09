@@ -1,6 +1,6 @@
 # PARK@DCU
 #### by Declan Moore
-Please find the application at [GitLab](https://gitlab.computing.dcu.ie/moored39/2018-ca377-moored39-parkatdcu) or [PythonAnywhere](http://moored39.pythonanywhere.com/park_at_dcu/)
+Please find the application on [GitHub](https://github.com/pirateZilla/2018-ca377-moored39-parkatdcu) or [PythonAnywhere](http://moored39.pythonanywhere.com/park_at_dcu/)
 
 ## The App
 Park@DCU is an application for the staff, students and visitors to DCU's campuses who want to avail of the parking facilities available. Users of the app can make a number of queries related to car parks across the university, these include:
@@ -12,11 +12,11 @@ Park@DCU is an application for the staff, students and visitors to DCU's campuse
 Our hope is that these functionalities will result in parking at DCU being an easier process than it previously was for staff, students and visitors alike.
 
 ## How to install the app locally
-1. From the 'Project' page for the app on Gitlab click 'Fork' to create your own fork of the project. 
+1. From the 'Project' page for the app on GitHub click 'Fork' to create your own fork of the project. 
 2. Rename your new fork of the project to something like `2018-ca377-<yourusername>-park-at-dcu`
 3. Open the terminal in Linux. Clone the repository using the following commands:
     ```
-    $ git clone https://gitlab.computing.dcu.ie/<yourusername>/2018-ca377-<yourusername>-parkatdcu
+    $ git clone https://github.com/<yourusername>/2018-ca377-<yourusername>-parkatdcu
     $ cd 2018-ca377-<yourusername>-parkatdcu
     ```
 4. Now the app is locally installed on your machine. Next, assuming you have both Python3 and Django installed on your Linux machine, type the following commands:
@@ -68,7 +68,7 @@ Our hope is that these functionalities will result in parking at DCU being an ea
 14. Open the deployment URL to confirm it is correctly deployed (i.e. '<yourusername>.pythonanywhere.com/park_at_dcu')
 
 ## Running Test Cases
-The test cases are written in Python and located in '2018-ca377-<yourusername>-parkatdcu'. They can be run locally, from the GitLab repository, or within your PythonAnywhere deployment.
+The test cases are written in Python and located in '2018-ca377-<yourusername>-parkatdcu'. They can be run locally, from the GitHub repository, or within your PythonAnywhere deployment.
 
 #### Locally
 1. Using the terminal navigate to your project directory.
@@ -81,17 +81,17 @@ The test cases are written in Python and located in '2018-ca377-<yourusername>-p
     ```
 3. Passes, failures are errors of your unit test cases will then be presented within the terminal.
 
-#### Gitlab
-1. In your terminal, commit your most recent version of the project to your GitLab repository.
+#### GitHub
+1. In your terminal, commit your most recent version of the project to your GitHub repository.
     ```
     $ git add .
     $ git commit -m "<insert concise commit message here>"
     $ git push -u origin master
     ```
-2. Once the version has been pushed to GitLab, open the GitLab Repository in your browser.
+2. Once the version has been pushed to GitHub, open the GitHub Repository in your browser.
 3. Navigate to the 'Pipelines' tab.
 4. All commits will be visible here with a status of 'passed' or 'failed'. In the 'Stages' column of each commit if you hover over that icon you can see each test case status. Clicking these will open the log information from the test cases indicating any passes, failures or errors from the unit test.
-5. For GitLab, the file `.gitlab-ci.yml` invokes the tests to begin on commits being pushed to the repository. 
+5. For GitHub, the file `.gitlab-ci.yml` invokes the tests to begin on commits being pushed to the repository. 
 
 #### PythonAnywhere
 1. Similarly to running the unittests locally, on PythonAnywhere you can run `./manage.py test` from your Bash Console.
